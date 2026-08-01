@@ -514,13 +514,42 @@ footer.foot{
 }
 @media (max-width:680px){
   html{font-size:18px}
-  .tabs-grid{grid-template-columns:repeat(2,1fr);gap:.4rem}
-  .tab .tab-t{font-size:.88rem}
   header.top h1{font-size:1.35rem}
   .panel-head h2{font-size:1.25rem}
   .two-col{flex-direction:column}
   table.data{font-size:.9rem}
   table.data td,table.data th{padding:.55em .5em}
+
+  /* 탭 메뉴: 6행 그리드 -> 가로 스크롤 한 줄 */
+  nav.tabs{padding:.5rem 0}
+  .tabs-grid{
+    display:flex; grid-template-columns:none; gap:.4rem;
+    overflow-x:auto; -webkit-overflow-scrolling:touch;
+    padding:0 1.2rem .3rem; scroll-snap-type:x proximity;
+    scrollbar-width:thin;
+  }
+  .tabs-grid::-webkit-scrollbar{height:5px}
+  .tabs-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+  .tab{
+    flex:0 0 auto; scroll-snap-align:start;
+    flex-direction:column; align-items:flex-start; gap:.2rem;
+    padding:.4rem .65rem; min-width:4.6rem;
+  }
+  .tab .tab-t{font-size:.74rem;line-height:1.25;white-space:nowrap}
+  .tab .tab-n{font-size:.72rem;padding:.05rem .35rem}
+
+  /* 현재 탭이 몇 번인지 얇은 표시줄로 보완 */
+  .mobile-progress{
+    display:block; height:4px; background:var(--line2);
+    margin:0 1.2rem .55rem; border-radius:2px; overflow:hidden;
+  }
+  .mobile-progress i{
+    display:block; height:100%; width:8.33%; background:var(--accent);
+    transition:width .15s ease, margin-left .15s ease;
+  }
+}
+@media (min-width:681px){
+  .mobile-progress{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none !important;scroll-behavior:auto !important}
@@ -560,6 +589,7 @@ footer.foot{
   <div class="tabs-grid">
     <button class="tab t-p1" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" data-n="1" tabindex="0"><span class="tab-n">01</span><span class="tab-t">핵심 요약</span></button><button class="tab t-p2" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" data-n="2" tabindex="-1"><span class="tab-n">02</span><span class="tab-t">진안지구 현황</span></button><button class="tab t-p3" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" data-n="3" tabindex="-1"><span class="tab-n">03</span><span class="tab-t">이해관계자</span></button><button class="tab t-p4" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" data-n="4" tabindex="-1"><span class="tab-n">04</span><span class="tab-t">제도와 법령</span></button><button class="tab t-p5" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false" data-n="5" tabindex="-1"><span class="tab-n">05</span><span class="tab-t">세제 전략</span></button><button class="tab t-p6" role="tab" id="tab-6" aria-controls="panel-6" aria-selected="false" data-n="6" tabindex="-1"><span class="tab-n">06</span><span class="tab-t">사업구조</span></button><button class="tab t-p7" role="tab" id="tab-7" aria-controls="panel-7" aria-selected="false" data-n="7" tabindex="-1"><span class="tab-n">07</span><span class="tab-t">선행사례</span></button><button class="tab t-p8" role="tab" id="tab-8" aria-controls="panel-8" aria-selected="false" data-n="8" tabindex="-1"><span class="tab-n">08</span><span class="tab-t">PM사 설립</span></button><button class="tab t-p9" role="tab" id="tab-9" aria-controls="panel-9" aria-selected="false" data-n="9" tabindex="-1"><span class="tab-n">09</span><span class="tab-t">자금과 수익</span></button><button class="tab t-p10" role="tab" id="tab-10" aria-controls="panel-10" aria-selected="false" data-n="10" tabindex="-1"><span class="tab-n">10</span><span class="tab-t">리스크</span></button><button class="tab t-p11" role="tab" id="tab-11" aria-controls="panel-11" aria-selected="false" data-n="11" tabindex="-1"><span class="tab-n">11</span><span class="tab-t">실행 로드맵</span></button><button class="tab t-p12" role="tab" id="tab-12" aria-controls="panel-12" aria-selected="false" data-n="12" tabindex="-1"><span class="tab-n">12</span><span class="tab-t">부록</span></button>
   </div>
+  <div class="mobile-progress" aria-hidden="true"><i id="mp-fill"></i></div>
 </nav>
 
 <div class="wrap">
@@ -2011,14 +2041,20 @@ footer.foot{
 (function(){
   var tabs=[].slice.call(document.querySelectorAll('.tab'));
   var panels=[].slice.call(document.querySelectorAll('.panel'));
+  var fill=document.getElementById('mp-fill');
   function show(n,focus){
     tabs.forEach(function(t){
       var on=(+t.dataset.n===n);
       t.setAttribute('aria-selected',on?'true':'false');
       t.tabIndex=on?0:-1;
       if(on&&focus)t.focus();
+      if(on)t.scrollIntoView({inline:'center',block:'nearest'});
     });
     panels.forEach(function(p){p.hidden=(p.id!=='panel-'+n)});
+    if(fill){
+      fill.style.width=(100/tabs.length)+'%';
+      fill.style.marginLeft=((n-1)*100/tabs.length)+'%';
+    }
     window.scrollTo(0,0);
   }
   tabs.forEach(function(t){
