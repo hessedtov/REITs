@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>화성진안 공공주택지구 대토보상 리츠 PM사 사업 준비 종합 보고서</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.css">
+<style>/* ===== 색 토큰 : 지적도 용도지역 색인에서 가져온 파트별 식별색 ===== */
+:root{
+  --p1:#12386B; --p1s:#E7EEF8;
+  --p2:#0B6E63; --p2s:#E1F2EF;
+  --p3:#B4460E; --p3s:#FCEBE1;
+  --p4:#5B21B6; --p4s:#EEE8FC;
+  --p5:#A81B1B; --p5s:#FBE6E6;
+  --p6:#15703A; --p6s:#E3F3E8;
+  --p7:#7C4A11; --p7s:#F6EBDC;
+  --p8:#164FC4; --p8s:#E5EDFD;
+  --p9:#8A5A05; --p9s:#F8EFDC;
+  --p10:#941238; --p10s:#FBE5EB;
+  --p11:#0A5F8C; --p11s:#E2F0F8;
+  --p12:#4A4642; --p12s:#EDEBE8;
+
+  --ink:#15191E;
+  --ink2:#3C444D;
+  --ink3:#5E6771;
+  --paper:#F0F2F5;
+  --card:#FFFFFF;
+  --line:#D2D8DF;
+  --line2:#E4E9EE;
+
+  --ok:#0B6E3B; --okbg:#E5F4EA;
+  --warn:#9A5A00; --warnbg:#FCF1DE;
+  --bad:#A81B1B; --badbg:#FBE7E7;
+  --info:#12386B; --infobg:#E9F0F9;
+  --act:#0A5F8C; --actbg:#E4F1F8;
+
+  --accent:var(--p1);
+  --accent-soft:var(--p1s);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Pretendard','Pretendard Variable','Noto Sans CJK KR','Noto Sans KR',
+    -apple-system,BlinkMacSystemFont,'Malgun Gothic','맑은 고딕',sans-serif;
+  font-size:1rem;
+  line-height:1.85;
+  -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+  overflow-wrap:break-word;
+}
+
+/* ===== 타이포 ===== */
+h2,h3,h4{font-family:'Noto Serif CJK KR','Noto Serif KR',serif;letter-spacing:-.01em}
+
+h3{
+  font-size:1.5rem; line-height:1.45; margin:2.6em 0 .9em;
+  color:var(--accent); font-weight:700;
+  padding-bottom:.45em; border-bottom:3px solid var(--accent-soft);
+}
+h3:first-child{margin-top:.4em}
+
+h4{
+  font-size:1.16rem; line-height:1.5; margin:1.8em 0 .6em;
+  color:var(--ink); font-weight:700;
+}
+
+p{margin:0 0 1.1em}
+b,strong{font-weight:700;color:var(--ink)}
+
+.lead{
+  font-size:1.14rem; line-height:1.8; color:var(--ink2);
+  background:var(--accent-soft);
+  border-left:8px solid var(--accent);
+  padding:1.1em 1.3em; margin:0 0 2em; border-radius:0 10px 10px 0;
+}
+
+.mini-note{font-size:.82em;color:var(--ink3);font-weight:400}
+
+.src{
+  font-size:.9rem; color:var(--ink3); line-height:1.7;
+  border-top:1px dashed var(--line); padding-top:.8em; margin-top:-.4em;
+}
+
+/* ===== 표 ===== */
+table.data{
+  width:100%; border-collapse:collapse; margin:1.2em 0 1.8em;
+  font-size:.97rem; line-height:1.65; background:var(--card);
+  border:2px solid var(--line);
+}
+table.data th{
+  background:var(--accent); color:#fff; font-weight:700;
+  text-align:left; padding:.75em .8em; border:1px solid rgba(255,255,255,.28);
+  font-size:.97rem;
+}
+table.data td{
+  padding:.72em .8em; border:1px solid var(--line2); vertical-align:top;
+}
+table.data tbody tr:nth-child(even){background:#FAFBFC}
+table.data.compact{font-size:.93rem}
+table.data.compact td,table.data.compact th{padding:.55em .7em}
+
+tr.row-ok td{background:var(--okbg) !important}
+tr.row-warn td{background:var(--warnbg) !important}
+tr.row-bad td{background:var(--badbg) !important}
+tr.row-key td{background:var(--accent-soft) !important;font-weight:600}
+
+td.st-open{color:var(--bad);font-weight:700}
+td.st-partial{color:var(--warn);font-weight:700}
+
+td.pct{font-weight:800;font-size:1.15em;color:var(--bad)}
+td.pct.goal{color:var(--ok)}
+td.sc{font-weight:800;font-size:1.2em;text-align:center;color:var(--accent)}
+
+td.grade{text-align:center;font-weight:800;font-size:.86em;color:#fff}
+td.grade.c{background:#8E1230 !important}
+td.grade.b{background:#B06B00 !important}
+td.grade.a{background:#5E6771 !important}
+
+td.pri{font-weight:700;text-align:center}
+td.pri.hi{color:#A81B1B}
+td.pri.mid{color:#9A5A00}
+td.pri.low{color:#5E6771}
+
+.score{color:#B06B00;letter-spacing:.12em;font-weight:700}
+
+/* ===== 신뢰도 태그 ===== */
+.tag{
+  display:inline-block; font-size:.76em; font-weight:700; line-height:1.5;
+  padding:.12em .6em; border-radius:4px; white-space:nowrap;
+  vertical-align:middle; margin:0 .12em;
+}
+.tag.ok{background:var(--okbg);color:var(--ok);border:1.5px solid var(--ok)}
+.tag.est{background:var(--warnbg);color:var(--warn);border:1.5px solid var(--warn)}
+.tag.na{background:#EDEBE8;color:#4A4642;border:1.5px solid #4A4642}
+
+.tag-legend{
+  background:var(--card); border:2px solid var(--line); border-radius:10px;
+  padding:1em 1.2em; margin:1.2em 0; font-size:.95rem; line-height:2;
+}
+.tag-legend div{margin:.25em 0}
+
+/* ===== 콜아웃 ===== */
+.callout{
+  border-radius:10px; padding:1.15em 1.35em; margin:1.6em 0;
+  border-left:9px solid; line-height:1.8;
+}
+.callout h4{margin:0 0 .5em; font-size:1.1rem}
+.callout p:last-child,.callout ul:last-child,.callout ol:last-child{margin-bottom:0}
+.callout.info{background:var(--infobg);border-color:var(--info)}
+.callout.info h4{color:var(--info)}
+.callout.warn{background:var(--warnbg);border-color:var(--warn)}
+.callout.warn h4{color:var(--warn)}
+.callout.danger{background:var(--badbg);border-color:var(--bad)}
+.callout.danger h4{color:var(--bad)}
+.callout.action{background:var(--actbg);border-color:var(--act)}
+.callout.action h4{color:var(--act)}
+
+ol.tight,ul.tight{margin:.5em 0 .5em 1.3em;padding:0}
+ol.tight li,ul.tight li{margin:.35em 0}
+
+/* ===== 번호 블록 ===== */
+.numbered{margin:1.4em 0}
+.num-item{
+  display:flex; gap:1.1em; background:var(--card); border:2px solid var(--line);
+  border-radius:10px; padding:1.15em 1.3em; margin-bottom:1em;
+}
+.num{
+  flex:0 0 auto; width:2.2em; height:2.2em; border-radius:8px;
+  background:var(--accent); color:#fff; font-weight:800; font-size:1.15rem;
+  display:flex; align-items:center; justify-content:center;
+}
+.num-body{flex:1 1 auto;min-width:0}
+.num-body h4{margin:.1em 0 .45em;color:var(--accent);font-size:1.14rem}
+.num-body p:last-child{margin-bottom:0}
+
+/* ===== 타임라인 ===== */
+.timeline{
+  margin:1.4em 0; border-left:5px solid var(--accent-soft); padding-left:1.3em;
+}
+.tl-item{display:flex;gap:1em;margin-bottom:.95em;position:relative}
+.tl-item::before{
+  content:''; position:absolute; left:-1.72em; top:.6em;
+  width:.7em; height:.7em; border-radius:50%;
+  background:var(--line); border:2px solid var(--paper);
+}
+.tl-item.done::before{background:var(--accent)}
+.tl-item.now::before{background:#B4460E;transform:scale(1.5)}
+.tl-item.key::before{background:#A81B1B;transform:scale(1.4)}
+.tl-year{
+  flex:0 0 8.4em; font-weight:800; color:var(--accent); font-size:.98rem;
+  font-variant-numeric:tabular-nums;
+}
+.tl-body{flex:1 1 auto;line-height:1.7}
+.tl-item.now .tl-body{font-weight:700}
+.now-badge{
+  background:#B4460E;color:#fff;font-size:.78em;font-weight:700;
+  padding:.1em .6em;border-radius:5px;margin-left:.3em;white-space:nowrap;
+}
+.timeline.compact .tl-year{flex-basis:7em}
+
+/* ===== 단계 ===== */
+.steps{margin:1.3em 0}
+.step{
+  display:flex; gap:.95em; align-items:flex-start;
+  background:var(--card); border:2px solid var(--line2); border-radius:9px;
+  padding:.8em 1em; margin-bottom:.6em; line-height:1.7;
+}
+.step-n{
+  flex:0 0 auto; width:1.9em; height:1.9em; border-radius:50%;
+  background:var(--accent-soft); color:var(--accent);
+  font-weight:800; font-size:.95rem;
+  display:flex; align-items:center; justify-content:center;
+}
+.steps.big .step{padding:1em 1.15em}
+
+/* ===== 2단 대비 ===== */
+.two-col{display:flex;gap:1.1em;margin:1.4em 0;flex-wrap:wrap}
+.col-do,.col-dont{
+  flex:1 1 300px; border-radius:10px; padding:1.1em 1.3em; border:2px solid;
+}
+.col-do{background:var(--okbg);border-color:var(--ok)}
+.col-dont{background:var(--badbg);border-color:var(--bad)}
+.col-do h4{margin:0 0 .5em;color:var(--ok)}
+.col-dont h4{margin:0 0 .5em;color:var(--bad)}
+.col-do ul,.col-dont ul{margin:0;padding-left:1.3em}
+.col-do li,.col-dont li{margin:.45em 0;line-height:1.7}
+
+/* ===== 체크리스트 ===== */
+.checklist{
+  background:var(--card); border:2px solid var(--line); border-radius:10px;
+  padding:1.1em 1.3em; margin:1.3em 0;
+}
+.checklist label{
+  display:flex; gap:.7em; align-items:flex-start;
+  padding:.5em 0; border-bottom:1px dashed var(--line2); line-height:1.7;
+  cursor:pointer;
+}
+.checklist label:last-child{border-bottom:none}
+.checklist input[type=checkbox]{
+  flex:0 0 auto; width:1.35em; height:1.35em; margin-top:.22em; accent-color:var(--accent);
+}
+.checklist .cb{
+  flex:0 0 auto;width:1.1em;height:1.1em;margin-top:.3em;
+  border:2px solid var(--ink3);border-radius:3px;display:inline-block;
+}
+
+/* ===== 플로우 ===== */
+.flow{display:flex;align-items:stretch;gap:.4em;flex-wrap:wrap;margin:1.4em 0}
+.flow-step{
+  flex:1 1 130px; background:var(--card); border:2px solid var(--line);
+  border-radius:9px; padding:.8em .7em; text-align:center;
+  font-size:.92rem; line-height:1.55; position:relative;
+}
+.flow-step.hl{background:var(--accent-soft);border-color:var(--accent)}
+.fs-n{
+  display:block; font-size:.78em; font-weight:800; color:var(--accent);
+  margin-bottom:.2em;
+}
+.flow-arrow{
+  align-self:center; color:var(--accent); font-weight:800; font-size:1rem;
+  flex:0 0 auto;
+}
+.flow.vertical{flex-direction:column;align-items:center;gap:.2em}
+.flow.vertical .flow-step{width:100%;max-width:24em;flex:0 0 auto}
+
+/* ===== 수식 박스 ===== */
+.formula{
+  background:var(--accent-soft); border:2px solid var(--accent);
+  border-radius:10px; padding:1em 1.3em; margin:1.2em 0; text-align:center;
+}
+.f-line{font-size:1.05rem;line-height:1.9}
+.f-line.sub{font-size:.95rem;color:var(--ink2)}
+
+/* ===== 칩 ===== */
+.chips{display:flex;flex-wrap:wrap;gap:.5em;margin:1em 0 1.4em}
+.chip{
+  background:var(--card); border:2px solid var(--line); border-radius:999px;
+  padding:.35em 1em; font-size:.93rem; font-weight:600;
+}
+.chip.hl{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+ul.doc-list{margin:.8em 0 1.4em 1.3em;padding:0}
+ul.doc-list li{margin:.4em 0;line-height:1.7}
+
+/* ===== 리스크 랭크 ===== */
+.risk-rank{margin:1.2em 0}
+.rr-item{
+  display:flex; gap:1em; align-items:flex-start; background:var(--card);
+  border:2px solid var(--line2); border-left:7px solid var(--bad);
+  border-radius:9px; padding:.85em 1.1em; margin-bottom:.6em; line-height:1.7;
+}
+.rr-n{
+  flex:0 0 auto; width:1.9em; height:1.9em; border-radius:50%;
+  background:var(--bad); color:#fff; font-weight:800; font-size:.95rem;
+  display:flex; align-items:center; justify-content:center;
+}
+
+/* ===== 이유 카드 ===== */
+.reasons{display:flex;flex-wrap:wrap;gap:.8em;margin:1.2em 0}
+.reason{
+  flex:1 1 250px; background:var(--card); border:2px solid var(--line);
+  border-radius:9px; padding:.9em 1.1em; font-size:.95rem; line-height:1.7;
+}
+
+/* ===== 조건 카드 ===== */
+.conditions{display:flex;flex-wrap:wrap;gap:.7em;margin:1.2em 0}
+.cond{
+  flex:1 1 240px; border-radius:9px; padding:.85em 1.1em;
+  font-size:.94rem; line-height:1.65; border:2px solid;
+}
+.cond.ok{background:var(--okbg);border-color:var(--ok)}
+.cond.warn{background:var(--warnbg);border-color:var(--warn)}
+.cond.bad{background:var(--badbg);border-color:var(--bad)}
+
+/* ===== 트렌드 ===== */
+.trend{margin:1.2em 0}
+.trend-item{
+  background:var(--card); border:2px solid var(--line2); border-radius:9px;
+  padding:.8em 1.1em; margin-bottom:.55em; line-height:1.75;
+}
+.trend-item.hl{background:var(--accent-soft);border-color:var(--accent)}
+
+/* ===== 로드맵 ===== */
+.roadmap{display:flex;flex-wrap:wrap;gap:.9em;margin:1.3em 0}
+.rm-year{
+  flex:1 1 280px; background:var(--card); border:2px solid var(--line);
+  border-radius:10px; overflow:hidden;
+}
+.rm-head{
+  background:var(--accent); color:#fff; font-weight:800; font-size:1.05rem;
+  padding:.6em 1em;
+}
+.rm-year ul{margin:.8em 0 .7em;padding-left:2.2em}
+.rm-year li{margin:.35em 0;line-height:1.65;font-size:.95rem}
+.rm-kpi{
+  background:var(--accent-soft); color:var(--accent); font-weight:700;
+  font-size:.9rem; padding:.6em 1em; line-height:1.6;
+}
+
+/* ===== 오늘 할 일 ===== */
+.today{margin:1.2em 0}
+.td-item{
+  display:flex; gap:1em; align-items:flex-start; background:var(--actbg);
+  border:2px solid var(--act); border-radius:10px;
+  padding:.95em 1.2em; margin-bottom:.65em; line-height:1.7;
+}
+.td-n{
+  flex:0 0 auto; width:2em; height:2em; border-radius:50%;
+  background:var(--act); color:#fff; font-weight:800;
+  display:flex; align-items:center; justify-content:center;
+}
+
+/* ===== 용어집 ===== */
+dl.glossary{
+  background:var(--card); border:2px solid var(--line); border-radius:10px;
+  padding:1.1em 1.4em; margin:1.2em 0;
+}
+dl.glossary dt{
+  font-weight:800; color:var(--accent); margin-top:1em; font-size:1.02rem;
+}
+dl.glossary dt:first-child{margin-top:0}
+dl.glossary dd{margin:.25em 0 0;line-height:1.75;color:var(--ink2)}
+
+/* ================= 웹 셸 ================= */
+html{font-size:20px;scroll-behavior:smooth}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.2rem 4rem}
+
+header.top{
+  background:linear-gradient(180deg,#0E2748 0%,#12386B 100%);
+  color:#fff;padding:1.6rem 0 1.4rem;margin-bottom:1.4rem;
+}
+header.top .wrap{padding-bottom:0}
+.brand{font-size:.8rem;letter-spacing:.22em;font-weight:700;opacity:.8;margin-bottom:.5rem}
+header.top h1{
+  font-family:'Noto Serif CJK KR','Noto Serif KR',serif;
+  font-size:1.72rem;line-height:1.4;margin:0 0 .5rem;font-weight:700;letter-spacing:-.02em;
+}
+.sub{font-size:1rem;opacity:.9;margin:0}
+
+.toolbar{
+  display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;
+  margin-top:1.2rem;padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.22);
+}
+.tb-label{font-size:.9rem;font-weight:700;opacity:.85;margin-right:.2rem}
+.tb-btn{
+  font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;
+  background:rgba(255,255,255,.14);color:#fff;border:2px solid rgba(255,255,255,.42);
+  border-radius:8px;padding:.4rem 1rem;line-height:1.5;
+}
+.tb-btn:hover{background:rgba(255,255,255,.26)}
+.tb-btn[aria-pressed=true]{background:#fff;color:#12386B;border-color:#fff}
+.tb-sep{flex:1 1 auto}
+
+nav.tabs{
+  position:sticky;top:0;z-index:20;background:var(--paper);
+  padding:.7rem 0;margin-bottom:1.6rem;
+  border-bottom:2px solid var(--line);
+}
+.tabs-grid{
+  max-width:1180px;margin:0 auto;padding:0 1.2rem;
+  display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem;
+}
+.tab{
+  font:inherit;cursor:pointer;text-align:left;
+  display:flex;align-items:center;gap:.55rem;
+  background:var(--card);border:2px solid var(--line);border-radius:9px;
+  padding:.55rem .7rem;line-height:1.35;color:var(--ink2);
+  transition:transform .08s ease;
+}
+.tab:hover{transform:translateY(-2px)}
+.tab .tab-n{
+  flex:0 0 auto;font-weight:800;font-size:.82rem;color:#fff;
+  background:var(--ink3);border-radius:5px;padding:.1rem .4rem;
+  font-variant-numeric:tabular-nums;
+}
+.tab .tab-t{font-weight:700;font-size:.94rem}
+.tab[aria-selected=true]{color:#fff}
+.tab:focus-visible,.tb-btn:focus-visible{outline:4px solid #B4460E;outline-offset:2px}
+.tab.t-p1 .tab-n{background:var(--p1)}
+.tab.t-p1[aria-selected=true]{background:var(--p1);border-color:var(--p1)}
+.tab.t-p1[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p1{--accent:var(--p1);--accent-soft:var(--p1s)}
+.tab.t-p2 .tab-n{background:var(--p2)}
+.tab.t-p2[aria-selected=true]{background:var(--p2);border-color:var(--p2)}
+.tab.t-p2[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p2{--accent:var(--p2);--accent-soft:var(--p2s)}
+.tab.t-p3 .tab-n{background:var(--p3)}
+.tab.t-p3[aria-selected=true]{background:var(--p3);border-color:var(--p3)}
+.tab.t-p3[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p3{--accent:var(--p3);--accent-soft:var(--p3s)}
+.tab.t-p4 .tab-n{background:var(--p4)}
+.tab.t-p4[aria-selected=true]{background:var(--p4);border-color:var(--p4)}
+.tab.t-p4[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p4{--accent:var(--p4);--accent-soft:var(--p4s)}
+.tab.t-p5 .tab-n{background:var(--p5)}
+.tab.t-p5[aria-selected=true]{background:var(--p5);border-color:var(--p5)}
+.tab.t-p5[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p5{--accent:var(--p5);--accent-soft:var(--p5s)}
+.tab.t-p6 .tab-n{background:var(--p6)}
+.tab.t-p6[aria-selected=true]{background:var(--p6);border-color:var(--p6)}
+.tab.t-p6[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p6{--accent:var(--p6);--accent-soft:var(--p6s)}
+.tab.t-p7 .tab-n{background:var(--p7)}
+.tab.t-p7[aria-selected=true]{background:var(--p7);border-color:var(--p7)}
+.tab.t-p7[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p7{--accent:var(--p7);--accent-soft:var(--p7s)}
+.tab.t-p8 .tab-n{background:var(--p8)}
+.tab.t-p8[aria-selected=true]{background:var(--p8);border-color:var(--p8)}
+.tab.t-p8[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p8{--accent:var(--p8);--accent-soft:var(--p8s)}
+.tab.t-p9 .tab-n{background:var(--p9)}
+.tab.t-p9[aria-selected=true]{background:var(--p9);border-color:var(--p9)}
+.tab.t-p9[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p9{--accent:var(--p9);--accent-soft:var(--p9s)}
+.tab.t-p10 .tab-n{background:var(--p10)}
+.tab.t-p10[aria-selected=true]{background:var(--p10);border-color:var(--p10)}
+.tab.t-p10[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p10{--accent:var(--p10);--accent-soft:var(--p10s)}
+.tab.t-p11 .tab-n{background:var(--p11)}
+.tab.t-p11[aria-selected=true]{background:var(--p11);border-color:var(--p11)}
+.tab.t-p11[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p11{--accent:var(--p11);--accent-soft:var(--p11s)}
+.tab.t-p12 .tab-n{background:var(--p12)}
+.tab.t-p12[aria-selected=true]{background:var(--p12);border-color:var(--p12)}
+.tab.t-p12[aria-selected=true] .tab-n{background:rgba(255,255,255,.28)}
+.panel.s-p12{--accent:var(--p12);--accent-soft:var(--p12s)}
+
+.panel{
+  background:var(--card);border:2px solid var(--line);border-radius:14px;
+  border-top:10px solid var(--accent);
+  padding:1.9rem 2.1rem 2.1rem;
+}
+.panel[hidden]{display:none}
+.panel-head{display:flex;gap:1.1rem;align-items:flex-start;margin-bottom:1.6rem;
+  padding-bottom:1.1rem;border-bottom:3px solid var(--accent-soft)}
+.ph-n{
+  flex:0 0 auto;width:2.6rem;height:2.6rem;border-radius:10px;
+  background:var(--accent);color:#fff;font-weight:800;font-size:1.15rem;
+  display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;
+}
+.panel-head h2{
+  margin:0;font-size:1.55rem;line-height:1.35;color:var(--accent);font-weight:700;
+}
+.ph-d{margin:.25rem 0 0;font-size:.98rem;color:var(--ink3)}
+
+.panel-nav{
+  display:flex;gap:.7rem;justify-content:space-between;
+  margin-top:2.4rem;padding-top:1.3rem;border-top:2px solid var(--line2);
+}
+.pn-btn{
+  font:inherit;font-weight:700;font-size:.98rem;cursor:pointer;
+  background:var(--accent-soft);color:var(--accent);
+  border:2px solid var(--accent);border-radius:9px;padding:.55rem 1.2rem;
+}
+.pn-btn:hover{background:var(--accent);color:#fff}
+.pn-btn:focus-visible{outline:4px solid #B4460E;outline-offset:2px}
+.pn-btn.ghost{visibility:hidden}
+
+footer.foot{
+  margin-top:2.5rem;padding-top:1.4rem;border-top:2px solid var(--line);
+  font-size:.92rem;color:var(--ink3);line-height:1.8;
+}
+
+/* 반응형 */
+@media (max-width:1000px){
+  .tabs-grid{grid-template-columns:repeat(4,1fr)}
+  .panel{padding:1.5rem 1.3rem 1.7rem}
+}
+@media (max-width:680px){
+  html{font-size:18px}
+  .tabs-grid{grid-template-columns:repeat(2,1fr);gap:.4rem}
+  .tab .tab-t{font-size:.88rem}
+  header.top h1{font-size:1.35rem}
+  .panel-head h2{font-size:1.25rem}
+  .two-col{flex-direction:column}
+  table.data{font-size:.9rem}
+  table.data td,table.data th{padding:.55em .5em}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;scroll-behavior:auto !important}
+  .tab:hover{transform:none}
+}
+
+/* 인쇄 시 전체 펼침 */
+@media print{
+  body{background:#fff}
+  nav.tabs,.toolbar,.panel-nav{display:none !important}
+  .panel[hidden]{display:block !important}
+  .panel{page-break-before:always;border:none;border-top:6px solid var(--accent);border-radius:0;padding:1rem 0}
+  header.top{background:none;color:#000}
+  header.top h1{color:#000}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">CONFIDENTIAL · 내부 검토용</div>
+    <h1>화성진안 공공주택지구 대토보상 리츠 PM사 사업 준비 종합 보고서</h1>
+    <p class="sub">2026년 8월 1일 기준 · 대상: PM사 대표</p>
+    <div class="toolbar">
+      <span class="tb-label">글자 크기</span>
+      <button class="tb-btn" data-size="0" aria-pressed="false">작게</button>
+      <button class="tb-btn" data-size="1" aria-pressed="true">보통</button>
+      <button class="tb-btn" data-size="2" aria-pressed="false">크게</button>
+      <button class="tb-btn" data-size="3" aria-pressed="false">아주 크게</button>
+      <span class="tb-sep"></span>
+      <button class="tb-btn" id="printBtn">전체 인쇄</button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="보고서 파트">
+  <div class="tabs-grid">
+    <button class="tab t-p1" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" data-n="1" tabindex="0"><span class="tab-n">01</span><span class="tab-t">핵심 요약</span></button><button class="tab t-p2" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" data-n="2" tabindex="-1"><span class="tab-n">02</span><span class="tab-t">진안지구 현황</span></button><button class="tab t-p3" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" data-n="3" tabindex="-1"><span class="tab-n">03</span><span class="tab-t">이해관계자</span></button><button class="tab t-p4" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" data-n="4" tabindex="-1"><span class="tab-n">04</span><span class="tab-t">제도와 법령</span></button><button class="tab t-p5" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false" data-n="5" tabindex="-1"><span class="tab-n">05</span><span class="tab-t">세제 전략</span></button><button class="tab t-p6" role="tab" id="tab-6" aria-controls="panel-6" aria-selected="false" data-n="6" tabindex="-1"><span class="tab-n">06</span><span class="tab-t">사업구조</span></button><button class="tab t-p7" role="tab" id="tab-7" aria-controls="panel-7" aria-selected="false" data-n="7" tabindex="-1"><span class="tab-n">07</span><span class="tab-t">선행사례</span></button><button class="tab t-p8" role="tab" id="tab-8" aria-controls="panel-8" aria-selected="false" data-n="8" tabindex="-1"><span class="tab-n">08</span><span class="tab-t">PM사 설립</span></button><button class="tab t-p9" role="tab" id="tab-9" aria-controls="panel-9" aria-selected="false" data-n="9" tabindex="-1"><span class="tab-n">09</span><span class="tab-t">자금과 수익</span></button><button class="tab t-p10" role="tab" id="tab-10" aria-controls="panel-10" aria-selected="false" data-n="10" tabindex="-1"><span class="tab-n">10</span><span class="tab-t">리스크</span></button><button class="tab t-p11" role="tab" id="tab-11" aria-controls="panel-11" aria-selected="false" data-n="11" tabindex="-1"><span class="tab-n">11</span><span class="tab-t">실행 로드맵</span></button><button class="tab t-p12" role="tab" id="tab-12" aria-controls="panel-12" aria-selected="false" data-n="12" tabindex="-1"><span class="tab-n">12</span><span class="tab-t">부록</span></button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="panel s-p1" id="panel-1" role="tabpanel" aria-labelledby="tab-1" ><div class="panel-head"><span class="ph-n">01</span><div><h2>1부 · 핵심 요약</h2><p class="ph-d">한 장 요약과 세 가지 결론</p></div></div><div class="panel-body"><p class="lead">화성진안 공공주택지구 대토보상 리츠(대토리츠) 사업에 PM사로 참여하기 위해 필요한 제도·현황·실무·리스크를 한 권으로 정리했습니다. 2026년 8월 1일 기준이며, 이후 변동 가능성이 큰 항목은 각 파트에 별도 표시했습니다.</p>
+
+<div class="callout warn">
+  <h4>먼저 읽어야 할 한 가지</h4>
+  <p>이 사업의 성패를 가르는 단일 변수는 <b>조세특례제한법 제77조의2(대토보상 양도소득세 40% 감면·과세이연)의 일몰</b>입니다. 현행 조문상 일몰은 <b>2026년 12월 31일</b>인데, 진안지구의 보상 협의·계약은 <b>2028년 12월</b>로 예정되어 있습니다. 연장되지 않으면 대토보상의 핵심 유인이 사라지고 사업 자체가 성립하지 않을 수 있습니다. 자세한 내용과 대응 시나리오는 <b>5부 세제 전략</b>을 보십시오.</p>
+</div>
+
+<h3>1. 한 장 요약</h3>
+
+<table class="data">
+  <thead><tr><th style="width:22%">항목</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>대상 사업지</td><td>화성진안 공공주택지구 (경기도 화성시 진안·반정·반월·기산·병점동 일원)</td></tr>
+    <tr><td>규모</td><td>452만 5,533㎡ (약 147만 평) · 약 2만 9,000세대 · 수용인구 7만 1,664명</td></tr>
+    <tr><td>지구지정</td><td>2024년 2월 7일 고시</td></tr>
+    <tr><td>사업시행자</td><td>한국토지주택공사(LH) 경기남부지역본부</td></tr>
+    <tr><td>현재 단계</td><td>지구계획 승인 준비 + 물건 기본조사 착수(2026년 7월)</td></tr>
+    <tr><td>보상 협의·계약 예정</td><td>2028년 12월 (LH 안내 기준)</td></tr>
+    <tr><td>PM 진입 골든타임</td><td><b>2026년 하반기 ~ 2028년 상반기</b> (조직화 및 계약 확보 구간)</td></tr>
+    <tr><td>첫 수수료 유입 예상</td><td>2029년 전후 (리츠 특례등록·결성 시점)</td></tr>
+    <tr><td>총 사업기간 전망</td><td>7~10년</td></tr>
+  </tbody>
+</table>
+
+<h3>2. 세 가지 핵심 결론</h3>
+
+<div class="numbered">
+  <div class="num-item">
+    <div class="num">01</div>
+    <div class="num-body">
+      <h4>진입 여지는 아직 열려 있으나, 창은 좁습니다</h4>
+      <p>2026년 8월 현재 공개 자료상 진안지구에서 <b>대토리츠를 선점한 PM사는 확인되지 않습니다.</b> 다만 토지주 조직은 이미 형성되어 있습니다. 통합대책위원회(위원장 이병구, 원주민 50% 이상 가입)와 연합대책위원회(공동위원장 임장호)가 활동 중이고, 법무법인 도안(구해동 변호사)이 법률·세무 자문 축을 이미 차지하고 있습니다. 국내 대토리츠 최다 실적사인 <b>㈜미래피엠(대표 정헌수)이 화성시에 소재</b>한다는 점도 경쟁 관점에서 중대합니다. 신규 PM사는 법률 자문 영역이 아니라 <b>개발·금융·조합 설립 지원</b> 축으로 차별화해 진입해야 합니다.</p>
+    </div>
+  </div>
+  <div class="num-item">
+    <div class="num">02</div>
+    <div class="num-body">
+      <h4>세제 일몰이 사업성의 스위치입니다</h4>
+      <p>2025년 세제개편에서 3년 연장(2028년까지)된 것은 <b>제77조의3(개발제한구역 매수토지)</b>이며, 대토보상 조항인 <b>제77조의2가 아닙니다.</b> 이 둘을 혼동한 채 토지주에게 "세제는 연장됐다"고 설명하면 허위 설명이 되어 분쟁의 씨앗이 됩니다. 제77조와 제77조의2의 일몰은 2026년 말이므로, 통상 <b>2026년 세제개편안</b>에서 연장 여부가 결정될 가능성이 큽니다. 이 발표를 사업 최대의 의사결정 분기점으로 잡으십시오.</p>
+    </div>
+  </div>
+  <div class="num-item">
+    <div class="num">03</div>
+    <div class="num-body">
+      <h4>대토 신청률이 손익분기를 결정합니다</h4>
+      <p>정부 목표는 전체 보상의 최대 50%를 대토로 전환하는 것이었으나, 실제 3기 신도시 계약률은 <b>하남 교산 12%, 인천 계양 10%, 과천 과천 14% 수준</b>에 그쳤습니다. PM 사업계획은 이 실적치를 기준선으로 잡아야 하며, 낙관 시나리오(30% 이상)를 전제로 조직·비용을 설계하면 자금 소진 국면에서 무리한 영업으로 이어지고, 그 지점에서 법적 리스크가 발생합니다.</p>
+    </div>
+  </div>
+</div>
+
+<h3>3. 의사결정 트리거</h3>
+<p>다음 네 가지 사건을 상시 모니터링하고, 발생 시 사업 방향을 재설정하십시오.</p>
+
+<table class="data">
+  <thead><tr><th style="width:34%">트리거 사건</th><th style="width:33%">발생 시 판단</th><th>대응</th></tr></thead>
+  <tbody>
+    <tr class="row-ok"><td>조특법 제77조의2 일몰이 2028년 이후로 연장</td><td>사업 적극 추진</td><td>조직 확대, 토지주 설명회 본격화</td></tr>
+    <tr class="row-bad"><td>일몰 미연장 확정</td><td>대토 유인 급감</td><td>채권보상·현금보상 병행 자문 상품으로 전환, 사업 규모 축소</td></tr>
+    <tr class="row-warn"><td>대책위가 특정 경쟁 PM과 배타적 계약 체결</td><td>진입 곤란</td><td>인접 지구(봉담3, 화성어천 등) 또는 지구 내 잔여 용지 특화로 전환</td></tr>
+    <tr class="row-warn"><td>LH 보상일정이 1년 이상 추가 지연</td><td>운전자금 압박</td><td>고정비 축소, 타 지구 병행으로 현금흐름 확보</td></tr>
+  </tbody>
+</table>
+
+<h3>4. 전체 타임라인 한눈에 보기</h3>
+
+<div class="timeline">
+  <div class="tl-item"><div class="tl-year">2021.08</div><div class="tl-body"><b>공공주도 3080+ 발표</b> — 진안지구 신규 공공택지 후보 발표</div></div>
+  <div class="tl-item"><div class="tl-year">2021~2023</div><div class="tl-body"><b>부처 협의 난항</b> — 농림축산식품부 농업진흥구역 보전 이견으로 2년 6개월 표류</div></div>
+  <div class="tl-item done"><div class="tl-year">2024.02.07</div><div class="tl-body"><b>지구 지정 고시</b> — 452만 5,533㎡ 확정</div></div>
+  <div class="tl-item done"><div class="tl-year">2026.02.02</div><div class="tl-body"><b>통합대책위 정기총회</b> — 토지주 400여 명 참석, 보상 지연 집단 대응</div></div>
+  <div class="tl-item done"><div class="tl-year">2026.07.01~02</div><div class="tl-body"><b>LH 보상설명회</b> — 화성시 유앤아이센터, 5개 세션(보상일반·감정평가·권리구제·보상세무·기본조사)</div></div>
+  <div class="tl-item now"><div class="tl-year">2026.07~</div><div class="tl-body"><b>물건 기본조사 착수</b> ← <span class="now-badge">현재 위치</span></div></div>
+  <div class="tl-item"><div class="tl-year">2027.06</div><div class="tl-body">토지·물건 조서 작성</div></div>
+  <div class="tl-item"><div class="tl-year">2027.12</div><div class="tl-body">보상계획 공고·열람 <span class="mini-note">← 대토보상 신청 접수의 실질적 출발점</span></div></div>
+  <div class="tl-item"><div class="tl-year">2028.02</div><div class="tl-body">감정평가사 선정</div></div>
+  <div class="tl-item"><div class="tl-year">2028.04</div><div class="tl-body">감정평가 실시</div></div>
+  <div class="tl-item key"><div class="tl-year">2028.12</div><div class="tl-body"><b>협의·계약</b> — 대토보상 계약 체결 <span class="mini-note">← 대토리츠 현물출자의 법적 기점</span></div></div>
+  <div class="tl-item"><div class="tl-year">2029~2030</div><div class="tl-body">대토리츠 특례등록 → 영업인가 → 택지 수의계약 공급</div></div>
+  <div class="tl-item"><div class="tl-year">2030~2033</div><div class="tl-body">인허가·착공·분양·준공 → 정산·배당</div></div>
+</div>
+
+<h3>5. 이 보고서를 쓰는 법</h3>
+<p>각 파트에는 세 가지 신뢰도 표지를 붙였습니다. 토지주 앞에서 설명할 때 <span class="tag ok">확인</span> 항목만 단정적으로 말하고, 나머지는 반드시 유보 표현을 쓰십시오. 이것이 이 사업에서 대표를 지켜주는 가장 값싼 보험입니다.</p>
+
+<div class="tag-legend">
+  <div><span class="tag ok">확인</span> 1차 자료·법령 원문·언론 보도로 검증된 사실</div>
+  <div><span class="tag est">추정</span> 업계 관행·정황에 근거한 추론. 단정 금지</div>
+  <div><span class="tag na">확인 불가</span> 공개자료로 검증 불가. 별도 확보 필요(12부에 확보 경로 정리)</div>
+</div>
+
+<div class="callout info">
+  <h4>법률·세무 판단에 관한 고지</h4>
+  <p>이 보고서는 공개 자료를 정리·분석한 참고 문서이며 법률의견서나 세무자문이 아닙니다. 감면율·감면한도·일몰·전매제한의 세부 적용은 개별 토지의 취득시기, 사업인정고시일, 소유자 거주요건 등 사실관계에 따라 달라집니다. 실제 의사결정과 대외 설명 전에 반드시 변호사·세무사·감정평가사의 개별 검토를 받으십시오.</p>
+</div>
+</div><div class="panel-nav"><button class="pn-btn ghost">.</button><button class="pn-btn" data-goto="2">진안지구 현황 →</button></div></section><section class="panel s-p2" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden><div class="panel-head"><span class="ph-n">02</span><div><h2>2부 · 화성진안지구 현황</h2><p class="ph-d">지구 개요·보상 일정·지연 요인</p></div></div><div class="panel-body"><p class="lead">PM사가 토지주 앞에 섰을 때 가장 먼저 검증받는 것은 "이 사람이 우리 동네 사업을 나보다 잘 아는가"입니다. 이 파트는 그 기본기에 해당합니다.</p>
+
+<h3>1. 지구 개요</h3>
+
+<table class="data">
+  <thead><tr><th style="width:24%">구분</th><th style="width:56%">내용</th><th style="width:20%">신뢰도</th></tr></thead>
+  <tbody>
+    <tr><td>지구명</td><td>화성진안 공공주택지구</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td>위치</td><td>화성시 진안동·반정동·반월동·기산동·병점동 일원</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td>면적</td><td>452만 5,533㎡ (약 147만 평) · 보도에 따라 452만 6,000㎡로도 표기</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td>주택 물량</td><td>약 2만 9,000세대(2만 9,860가구로 보도된 자료도 있음)</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td>수용인구</td><td>7만 1,664명</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td>지구지정 고시일</td><td>2024년 2월 7일</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td>사업시행자</td><td>LH 경기남부지역본부</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td>근거 법률</td><td>공공주택 특별법</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td>토지이용계획·용지별 물량</td><td>지구계획 미승인으로 미확정</td><td><span class="tag na">확인 불가</span></td></tr>
+    <tr><td>예상 조성원가</td><td>미공개</td><td><span class="tag na">확인 불가</span></td></tr>
+    <tr><td>총 보상비 규모</td><td>진안 단독 수치 미확인</td><td><span class="tag na">확인 불가</span></td></tr>
+    <tr><td>토지주 수·국공유지 비율</td><td>공식 통계 미공개</td><td><span class="tag na">확인 불가</span></td></tr>
+  </tbody>
+</table>
+
+<div class="callout info">
+  <h4>규모 감각 잡기</h4>
+  <p>452만㎡는 1기 신도시 <b>산본신도시와 비슷한 면적</b>입니다. 동탄1신도시 북쪽과 맞닿아 있고 수원시 경계에 접한 요지입니다. 대토보상 대상 면적이 총 사업면적의 일부에 불과하더라도, 절대 규모가 크기 때문에 대토 신청률이 10%대에 머물러도 사업 성립 자체는 가능한 규모입니다.</p>
+</div>
+
+<h3>2. 사업 연혁과 지연의 구조</h3>
+
+<p>진안지구는 <b>발표에서 지구지정까지만 2년 6개월</b>이 걸렸습니다. 이 지연의 원인이 아직 완전히 해소되지 않았다는 점이 사업 리스크의 본질입니다.</p>
+
+<table class="data">
+  <thead><tr><th style="width:30%">지연 요인</th><th style="width:48%">내용</th><th style="width:22%">2026.8 기준 상태</th></tr></thead>
+  <tbody>
+    <tr><td>농림축산식품부 반발</td><td>지구 내 농업진흥구역(절대농지) 보전 요구. 부처 간 협의가 지구지정을 2년 6개월 지연시킨 최대 원인</td><td class="st-partial">일부 해소<br><span class="mini-note">지구지정은 완료</span></td></tr>
+    <tr><td>수원 군공항 소음·고도제한</td><td>진안지구 상당 부분이 군공항 영향권. 소음대책지역 지정과 고도제한이 토지이용계획·층수에 직결</td><td class="st-open">미해소</td></tr>
+    <tr><td>국가산단 편중 정책</td><td>정부가 용인·세종·충주 등 국가산업단지에 행정력·예산을 집중하며 '선보상' 진행. 3기 신도시 후속지구는 후순위</td><td class="st-open">미해소</td></tr>
+    <tr><td>반월동 열병합발전소</td><td>2025년 4월 반대 비상대책위 결성, 국회의원 철회 촉구. 지구 내 혐오시설 배치 갈등</td><td class="st-open">미해소</td></tr>
+    <tr><td>지구 내 기업 이전</td><td>지구 내 기업 약 1,100곳의 대체부지 미확보. 화성 지역 기업 소외 문제도 제기</td><td class="st-open">미해소</td></tr>
+  </tbody>
+</table>
+
+<div class="callout warn">
+  <h4>PM 관점의 해석</h4>
+  <p>다섯 요인 중 <b>네 가지가 미해소</b>입니다. LH가 제시한 2028년 12월 협의·계약 일정은 이들이 순조롭게 풀린다는 전제 위에 있습니다. 사업계획에는 <b>기본안(2028년 말) 외에 지연안(2030년)</b>을 반드시 병기하고, 고정비 구조를 지연안에서도 버틸 수 있게 설계하십시오.</p>
+</div>
+
+<h3>3. LH 안내 보상 일정 (2026년 7월 설명회 기준)</h3>
+
+<table class="data">
+  <thead><tr><th style="width:18%">시기</th><th style="width:26%">절차</th><th>PM사가 이 시점에 해야 할 일</th></tr></thead>
+  <tbody>
+    <tr><td>2026.07</td><td>물건 기본조사 착수</td><td>토지주 접촉 개시. 기본조사 협조 안내를 매개로 신뢰 형성. 지장물 누락 대응 안내</td></tr>
+    <tr><td>2027.06</td><td>토지·물건 조서 작성</td><td>조서 이의신청 지원. 누락·오기 확인 캠페인은 토지주 신뢰 확보에 가장 효과적인 접점</td></tr>
+    <tr><td>2027.12</td><td><b>보상계획 공고·열람</b></td><td>대토보상 신청 설명회 본격 개시. 대토 vs 현금 vs 채권 의사결정 자문</td></tr>
+    <tr><td>2028.02</td><td>감정평가사 선정</td><td>토지소유자 추천 감정평가법인 선정 캠페인 조직 (아래 4항 참조)</td></tr>
+    <tr><td>2028.04</td><td>감정평가 실시</td><td>평가 대응 자문, 개별 필지 쟁점 정리</td></tr>
+    <tr><td>2028.12</td><td><b>협의·계약</b></td><td>대토보상 계약 체결 → 대토리츠 현물출자 및 특례등록 실행</td></tr>
+  </tbody>
+</table>
+
+<p class="src">2026년 7월 1~2일 화성시 유앤아이센터 화성아트홀에서 열린 보상설명회에서 LH가 안내한 일정입니다. 참여 전문기관은 감정평가 <b>하나감정평가법인</b>, 권리구제 <b>법무법인 율촌</b>, 세무 <b>세무법인 리치</b>였습니다. <span class="tag ok">확인</span></p>
+
+<h3>4. 토지주가 받게 되는 보상 메뉴 전체</h3>
+
+<p>대토보상만 아는 PM사는 반쪽입니다. 토지주는 아래 메뉴를 <b>조합해서</b> 선택하며, 그 조합을 설계해주는 것이 PM의 실질 부가가치입니다.</p>
+
+<table class="data">
+  <thead><tr><th style="width:22%">보상 종류</th><th style="width:44%">내용</th><th>대토리츠와의 관계</th></tr></thead>
+  <tbody>
+    <tr><td><b>현금보상</b></td><td>감정평가액 기준 현금 지급. 양도세 15% 감면(조특법 §77)</td><td>대체재. 대토 신청률을 갉아먹는 주 경쟁자</td></tr>
+    <tr><td><b>채권보상</b></td><td>양도세 20% 감면. 3년 만기 특약 35%, 5년 만기 45%. 부재부동산 소유자는 일정액 초과분 <b>의무 채권보상</b></td><td>부재지주에게는 대토보다 유리할 수 있음. 세제 일몰 시 대안</td></tr>
+    <tr><td><b>대토보상</b></td><td>조성된 택지로 보상. 양도세 40% 감면 또는 과세이연(§77의2)</td><td><b>리츠의 원재료</b></td></tr>
+    <tr><td>이주자택지</td><td>기준일 이전부터 거주한 가옥 소유자에게 단독주택용지 공급(협의양도인택지 포함)</td><td>대토와 별개 권리. 중복 수령 가능 여부는 지구별 지침 확인 필요</td></tr>
+    <tr><td>생활대책용지</td><td>영업손실 보상 대상 등에게 상업용지 등 공급(조합 방식이 일반적)</td><td>상가조합 PM 사업의 별도 수익원</td></tr>
+    <tr><td>잔여지 매수·손실보상</td><td>편입 후 남은 토지가 종래 목적대로 사용 곤란한 경우 매수 청구</td><td>보상액 총액을 키워 대토 가능 면적 증가</td></tr>
+    <tr><td>영업·농업·축산 손실보상</td><td>휴업·폐업 보상, 영농손실액, 축산 손실 등</td><td>지구 내 기업 1,100곳 관련 핵심 쟁점</td></tr>
+    <tr><td>주거이전비·이사비</td><td>소유자·세입자별 가구원수 기준</td><td>세입자 대책. 대책위 신뢰 확보 소재</td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag est">추정</span> 각 항목의 진안지구 적용 세부 기준(기준일, 공급 규모, 중복 수령 가능 여부)은 지구계획 승인과 보상계획 공고 시 확정됩니다. 현 시점 단정 설명은 금물입니다.</p>
+
+<h3>5. 감정평가 3사 구조 — PM이 개입할 수 있는 지점</h3>
+
+<p>토지보상법상 감정평가법인은 원칙적으로 <b>3사</b>가 선정됩니다.</p>
+
+<div class="steps">
+  <div class="step"><div class="step-n">1</div><div><b>사업시행자(LH) 선정</b> — 1사</div></div>
+  <div class="step"><div class="step-n">2</div><div><b>시·도지사 추천</b> — 1사 (경기도지사)</div></div>
+  <div class="step"><div class="step-n">3</div><div><b>토지소유자 추천</b> — 1사. <b>보상 대상 토지면적의 1/2 이상 + 토지소유자 총수의 과반수</b> 동의를 받아 추천</div></div>
+</div>
+
+<div class="callout action">
+  <h4>이것이 PM사의 첫 번째 실질 진입 지점입니다</h4>
+  <p>토지소유자 추천 감정평가법인 선정에는 <b>면적 1/2 이상 + 인원 과반수</b>라는 높은 동의 요건이 걸려 있어, 조직화된 대책위 없이는 달성이 어렵습니다. PM사가 이 캠페인의 실무(동의서 양식, 명부 관리, 설명회 운영, 법인 후보 검증)를 무상 또는 저가로 지원하면 <b>대토리츠 계약보다 먼저 신뢰를 얻을 수 있습니다.</b> 시점은 2027년 하반기~2028년 2월입니다. 지금부터 준비하십시오.</p>
+</div>
+
+<h3>6. 협의 결렬 이후의 절차 — 토지주가 반드시 묻는 질문</h3>
+
+<div class="steps">
+  <div class="step"><div class="step-n">1</div><div><b>협의</b> — 감정평가액 기준. 결렬 시 다음 단계</div></div>
+  <div class="step"><div class="step-n">2</div><div><b>수용재결</b> — 관할 토지수용위원회(중앙 또는 경기도). 재결 신청 청구 가능</div></div>
+  <div class="step"><div class="step-n">3</div><div><b>이의재결</b> — 재결서 수령 후 30일 이내 이의신청</div></div>
+  <div class="step"><div class="step-n">4</div><div><b>행정소송(보상금 증액 청구)</b> — 재결서 수령일부터 90일(이의재결 거친 경우 60일) 이내</div></div>
+</div>
+
+<div class="callout warn">
+  <h4>대토보상은 협의 단계에서만 가능합니다</h4>
+  <p>수용재결로 넘어가면 보상은 현금(또는 채권)으로 확정되고 <b>대토보상 선택권은 사라집니다.</b> 즉 보상금 증액을 다투는 강경 토지주는 대토리츠의 잠재 고객에서 이탈합니다. PM사는 "증액 투쟁"과 "대토 참여"가 상충한다는 사실을 정확히 설명해야 하며, 이 지점에서 법무법인의 이해와 충돌할 수 있으므로 대책위 내 역할 분담을 초기에 정리해야 합니다.</p>
+</div>
+
+<h3>7. 입지 여건과 사업성 요인</h3>
+
+<table class="data">
+  <thead><tr><th style="width:26%">요인</th><th>내용 및 사업성 영향</th></tr></thead>
+  <tbody>
+    <tr class="row-ok"><td>삼성전자 배후수요</td><td>연합대책위가 "삼성전자 배후도시로 임대수요가 꾸준했다"고 언급. 주거·상업 수요 기반 <span class="tag ok">확인</span></td></tr>
+    <tr class="row-ok"><td>동탄1 인접·수원 경계</td><td>기성 시가지 인접으로 정주여건 양호. 상업용지 사업성에 유리</td></tr>
+    <tr class="row-ok"><td>병점역 등 기존 인프라</td><td>1호선 병점역 생활권. 신규 교통 미확보 시에도 기본 접근성 확보</td></tr>
+    <tr class="row-warn"><td>경기남부광역철도</td><td>연계 논의는 있으나 국가계획 미반영 초기 단계. <b>토지주 설명 시 확정 사실처럼 언급 금지</b> <span class="tag est">추정</span></td></tr>
+    <tr class="row-bad"><td>수원 군공항 소음</td><td>고도제한·소음대책 → 층수 제한과 주거 선호도에 부정 영향. 상업·업무용지 배치 전략 필요</td></tr>
+    <tr class="row-bad"><td>열병합발전소</td><td>배치 확정 시 인근 용지 가치 하락. 대토 용지 위치 협상의 핵심 변수</td></tr>
+  </tbody>
+</table>
+
+<h3>8. 지금 확보해야 할 미확인 자료와 경로</h3>
+
+<table class="data">
+  <thead><tr><th style="width:34%">필요 자료</th><th style="width:34%">확보 경로</th><th>시점</th></tr></thead>
+  <tbody>
+    <tr><td>지구지정 고시문 전문 및 지형도면</td><td>국토교통부 관보·고시 / 화성시청 공고</td><td>즉시</td></tr>
+    <tr><td>토지이용계획(용지별 물량)</td><td>지구계획 승인 고시</td><td>승인 시</td></tr>
+    <tr><td>지구 내 필지·소유자 통계</td><td>토지대장·등기 열람(정보공개청구 병행)</td><td>즉시~6개월</td></tr>
+    <tr><td>보상계획 공고문(대토 공급 조건)</td><td>LH 경기남부지역본부 공고</td><td>2027.12</td></tr>
+    <tr><td>대토 공급 용지 종류·규모·가격</td><td>보상계획 공고 및 대토보상 공고</td><td>2027.12~2028</td></tr>
+    <tr><td>환경영향평가서 (소음·발전소 쟁점)</td><td>환경영향평가정보지원시스템(EIASS)</td><td>즉시</td></tr>
+  </tbody>
+</table>
+
+<div class="callout action">
+  <h4>실무 팁</h4>
+  <p>토지대장·등기 열람으로 <b>지구 내 상위 소유자 명부</b>를 만드는 작업은 지금 당장 착수 가능하고, 경쟁사 대비 가장 확실한 우위가 됩니다. 다만 개인정보 취급에 유의하고, 수집 목적·보관기간을 명시한 동의 절차를 갖추십시오. 무단 수집·활용은 개인정보보호법 위반이 될 수 있습니다.</p>
+</div>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="1">← 핵심 요약</button><button class="pn-btn" data-goto="3">이해관계자 →</button></div></section><section class="panel s-p3" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden><div class="panel-head"><span class="ph-n">03</span><div><h2>3부 · 이해관계자와 경쟁 지형</h2><p class="ph-d">대책위·경쟁사·진입 전략</p></div></div><div class="panel-body"><p class="lead">대토리츠 사업은 기술 사업이 아니라 <b>신뢰 사업</b>입니다. 인허가 요건은 돈으로 채울 수 있지만 토지주의 위임장은 살 수 없습니다. 이 파트가 사업 성패의 60%를 결정합니다.</p>
+
+<h3>1. 이해관계자 지도</h3>
+
+<table class="data">
+  <thead><tr><th style="width:20%">주체</th><th style="width:34%">역할·권한</th><th>PM사와의 관계</th></tr></thead>
+  <tbody>
+    <tr><td><b>LH 경기남부지역본부</b></td><td>사업시행자. 보상계획 수립, 대토 공급 조건·위치·가격 결정, 리츠에 수의계약 공급</td><td>협상 상대. PM은 토지주를 대리해 공급조건을 협의</td></tr>
+    <tr><td><b>국토교통부</b></td><td>AMC 설립인가, 리츠 특례등록·영업인가, 감독</td><td>인허가 관청. 서류 실무의 종착지</td></tr>
+    <tr><td><b>토지주 / 대책위</b></td><td>대토보상권의 실질 소유자. 사업의 유일한 원재료 공급자</td><td><b>고객이자 발주처</b></td></tr>
+    <tr><td><b>화성시</b></td><td>인허가, 민·관·공 협의체 운영, 지역 여론</td><td>우호 관계 형성 필요</td></tr>
+    <tr><td>AMC(자산관리회사)</td><td>리츠 자산 투자·운용. 국토부 인가 필수</td><td>제휴 파트너 (또는 자체 설립)</td></tr>
+    <tr><td>신탁사·시공사·금융기관</td><td>자산보관, 책임준공, PF</td><td>PM이 조립하는 컨소시엄 구성원</td></tr>
+    <tr><td>법무법인·세무법인·감정평가법인</td><td>법률·세무·평가 자문</td><td>협업 또는 경쟁(자문 영역 중복 시)</td></tr>
+    <tr><td>경쟁 PM사·대토업체</td><td>동일 토지주 대상 영업</td><td>선점 경쟁 상대</td></tr>
+  </tbody>
+</table>
+
+<h3>2. 진안지구 토지주 조직 현황</h3>
+
+<table class="data">
+  <thead><tr><th style="width:26%">단체</th><th style="width:22%">대표·규모</th><th style="width:32%">활동</th><th>신뢰도</th></tr></thead>
+  <tbody>
+    <tr><td><b>화성진안지구 통합대책위원회</b></td><td>위원장 이병구<br>원주민 50% 이상 가입<br>정식 등록 비영리단체</td><td>2021.11.16 비대위 출범 → 지구지정 후 개칭. 2026.2.2 정기총회 400여 명 참석. 2025.7 화성시의회 앞 집회</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td><b>화성진안 공공주택지구 연합대책위원회</b></td><td>공동위원장 임장호</td><td>2026.7 LH 설명회에서 보상 속도 주문. 언론 대응 활발</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td>반월동 열병합발전소 반대 비대위</td><td>—</td><td>2025년 결성. 국회의원(전용기) 연계 반대운동</td><td><span class="tag ok">확인</span></td></tr>
+    <tr><td>민·관·공 협의체</td><td>화성시 주도</td><td>초기 3개 주민협의체 난립을 정리하려는 시도. 정명근 시장 공약</td><td><span class="tag ok">확인</span></td></tr>
+  </tbody>
+</table>
+
+<div class="callout warn">
+  <h4>조직 지형의 핵심 판단</h4>
+  <p>진안지구는 <b>단일 창구가 아니라 복수 대책위 병존</b> 상태입니다. 이는 신규 PM사에게 기회이자 함정입니다. 기회인 이유는 특정 조직이 배타적 지위를 확립하지 못했기 때문이고, 함정인 이유는 <b>한 곳과 손잡는 순간 다른 곳의 반대편에 서게 되기</b> 때문입니다. 초기에는 특정 조직 전속 계약보다 <b>중립적 정보 제공자</b> 포지션으로 양쪽 모두와 접점을 유지하는 편이 안전합니다.</p>
+</div>
+
+<h3>3. 이미 자리 잡은 전문가 연대</h3>
+
+<table class="data">
+  <thead><tr><th style="width:26%">기관</th><th style="width:22%">담당</th><th>진안 관련 활동</th></tr></thead>
+  <tbody>
+    <tr><td>법무법인 도안</td><td>구해동 대표변호사</td><td>통합대책위 법률·세무 통합설명회 진행. 보상 지연 원인 공개 분석. <b>토지주 신뢰 기반 확보 상태</b></td></tr>
+    <tr><td>세무법인 리치</td><td>이성호 세무사</td><td>대책위 세무 자문 및 LH 설명회 세무 세션</td></tr>
+    <tr><td>법무법인 율촌</td><td>—</td><td>LH 보상설명회 권리구제 세션 담당 (시행자측)</td></tr>
+    <tr><td>하나감정평가법인</td><td>—</td><td>LH 보상설명회 감정평가 세션 담당 (시행자측)</td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag ok">확인</span> 도안·리치는 <b>토지주측</b>, 율촌·하나는 <b>시행자측</b> 세션이었다는 점이 중요합니다. 토지주측 자문 축은 이미 형성되어 있으므로, 신규 PM사가 "법률·세무 자문"을 내세우면 정면 충돌합니다.</p>
+
+<h3>4. 경쟁사 프로필 — ㈜미래피엠</h3>
+
+<table class="data">
+  <thead><tr><th style="width:24%">항목</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>대표</td><td>정헌수</td></tr>
+    <tr><td>소재지</td><td>경기 화성시 노작로3길 3 (반송동) 반석빌딩 3층 <span class="mini-note">← 진안지구와 같은 화성시</span></td></tr>
+    <tr><td>연락처 / 사업자번호</td><td>031-613-5115 / 124-86-55955</td></tr>
+    <tr><td>사업 영역</td><td>시행사업 · 대토PM · 상가조합PM</td></tr>
+    <tr><td>포지셔닝</td><td>"공공주택지구 전국연대 대책협의회 공식 대토자문사" 표방</td></tr>
+    <tr><td>주요 실적</td><td>동탄2 제일호 대토개발리츠(2014년 영업인가 PM), 동탄2 상가리츠(동탄역리치안프라자·디스퀘어프라자·우암프라자), 인천검암역세권 대토리츠, 경산대임 등</td></tr>
+    <tr><td>수상</td><td>2024 대한민국 건설환경기술대상 도시개발 부문 대상</td></tr>
+    <tr><td>공개 견해</td><td>"대토업체 난립 전에 대책위가 <b>대토조합</b>을 먼저 설립하고, 조합이 PM/대토업체를 선정하는 방식이 가장 안전·고수익"</td></tr>
+  </tbody>
+</table>
+
+<div class="callout warn">
+  <h4>냉정한 평가</h4>
+  <p>미래피엠은 <b>국내 최초 대토개발리츠(동탄2) 실적 + 화성 로컬 + 전국연대 네트워크</b>라는 3중 우위를 가집니다. 정면 경쟁으로는 이기기 어렵습니다. 다만 아직 진안 대토리츠를 선점했다는 <b>공개 증거는 없습니다</b>(<span class="tag na">확인 불가</span>). 미래피엠이 공개적으로 제시한 "조합 우선 설립" 논리는 역설적으로 신규 PM사에게 유리한 프레임입니다 — 조합이 주체가 되면 PM은 <b>경쟁 선정 절차</b>를 거치게 되고, 그 자리에서는 실적뿐 아니라 조건·투명성·전속성 여부가 함께 평가되기 때문입니다.</p>
+</div>
+
+<h3>5. 진입 전략 세 가지 시나리오</h3>
+
+<div class="numbered">
+  <div class="num-item">
+    <div class="num">A</div>
+    <div class="num-body">
+      <h4>조합 지원형 — 권장</h4>
+      <p><b>내용</b> 대책위의 대토조합 설립을 실비 수준으로 지원하고, 조합이 실시하는 PM 경쟁 선정에 참여.<br>
+      <b>장점</b> 이해충돌 논란에서 자유롭고 신뢰 형성이 빠름. 개발이익 사유화 비판을 원천 회피.<br>
+      <b>단점</b> 선정 탈락 위험. 초기 무상 투입 부담.<br>
+      <b>적합도</b> <span class="score">★★★★★</span></p>
+    </div>
+  </div>
+  <div class="num-item">
+    <div class="num">B</div>
+    <div class="num-body">
+      <h4>컨소시엄 참여형</h4>
+      <p><b>내용</b> 기존 대토 실적사(AMC·PM)와 컨소시엄을 구성해 지역 파트너로 참여. 본인은 토지주 조직화·지역 네트워크 담당.<br>
+      <b>장점</b> 실적 부재를 파트너 이름으로 보완. 자금 부담 분산.<br>
+      <b>단점</b> 수익 배분 축소. 파트너에 종속될 위험.<br>
+      <b>적합도</b> <span class="score">★★★★☆</span> — 첫 지구라면 현실적 선택</p>
+    </div>
+  </div>
+  <div class="num-item">
+    <div class="num">C</div>
+    <div class="num-body">
+      <h4>단독 전속 계약형 — 비권장</h4>
+      <p><b>내용</b> 토지주를 직접 모집해 전속 위임을 받고 단독 PM 지위 확보.<br>
+      <b>장점</b> 수익 극대화.<br>
+      <b>단점</b> 실적 없는 신규 PM사에게는 성공률이 낮고, 영업 과정에서 <b>확정수익 약속·선지급 유혹</b>에 노출되어 형사 리스크가 가장 큼.<br>
+      <b>적합도</b> <span class="score">★☆☆☆☆</span></p>
+    </div>
+  </div>
+</div>
+
+<h3>6. 대책위 접촉 실무 — 해야 할 것과 하지 말아야 할 것</h3>
+
+<div class="two-col">
+  <div class="col-do">
+    <h4>해야 할 것</h4>
+    <ul>
+      <li>첫 접촉은 <b>정보 제공</b>으로. 세제 일몰 이슈, 감정평가사 추천 요건 같은 실질 정보를 무상 브리핑</li>
+      <li>조서 이의신청·기본조사 협조 안내 등 <b>당장 필요한 실무</b>부터 지원</li>
+      <li>대토와 현금·채권의 <b>비교표</b>를 중립적으로 제시. 대토를 권하지 말 것</li>
+      <li>기존 자문 법무법인·세무법인을 존중하고 <b>역할 분담</b>을 먼저 제안</li>
+      <li>모든 설명 자료에 <b>출처와 기준일</b> 표기</li>
+      <li>복수 대책위가 있는 동안은 <b>양쪽 모두</b>에 동일한 정보 제공</li>
+    </ul>
+  </div>
+  <div class="col-dont">
+    <h4>절대 하지 말아야 할 것</h4>
+    <ul>
+      <li><b>확정수익·원금보장 약속</b> — 유사수신·사기 직결</li>
+      <li><b>보상금 선지급, 대토보상권 매입 제안</b> — 전매금지 위반(형사)</li>
+      <li>"몇 % 수익 보장" "얼마에 사드립니다" 류의 문구가 담긴 <b>인쇄물·현수막·문자</b> 배포</li>
+      <li>지구계획 미확정 상태에서 <b>용지 위치·규모를 단정</b>하는 설명</li>
+      <li>세제 일몰을 언급하지 않거나 "연장됐다"고 잘못 안내</li>
+      <li>대책위 간 갈등에 편들기</li>
+      <li>동의서에 <b>백지 위임</b>이나 과도한 위약금 조항 삽입</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout action">
+  <h4>첫 90일 접촉 계획</h4>
+  <ol class="tight">
+    <li><b>1~30일</b> 통합대책위·연합대책위 공개 활동 파악, 정기총회·설명회 일반 참관</li>
+    <li><b>31~60일</b> 실무진 면담 요청. "대토보상 세제 일몰 브리핑" 단일 주제로 무상 자료 제공</li>
+    <li><b>61~90일</b> 감정평가법인 토지소유자 추천 요건 안내 자료 제작·배포, 실무 지원 제안</li>
+  </ol>
+</div>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="2">← 진안지구 현황</button><button class="pn-btn" data-goto="4">제도와 법령 →</button></div></section><section class="panel s-p4" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden><div class="panel-head"><span class="ph-n">04</span><div><h2>4부 · 제도와 법령</h2><p class="ph-d">대토보상·대토리츠·전매제한</p></div></div><div class="panel-body"><p class="lead">대토리츠는 <b>토지보상법(원재료) + 부동산투자회사법(그릇) + 조세특례제한법(유인)</b> 세 법률의 교차점에서만 성립합니다. 어느 하나만 알면 사고가 납니다.</p>
+
+<h3>1. 대토보상의 법적 골격 — 토지보상법 제63조</h3>
+
+<h4>대상자 요건</h4>
+<p>사업시행자에게 양도한 토지가 <b>건축법 제57조에 따른 대지분할 제한면적 이상</b>이어야 합니다.</p>
+
+<table class="data compact">
+  <thead><tr><th>용도지역</th><th>최소 면적</th></tr></thead>
+  <tbody>
+    <tr><td>주거지역</td><td>60㎡ 이상</td></tr>
+    <tr><td>상업지역 · 공업지역</td><td>150㎡ 이상</td></tr>
+    <tr><td>녹지지역</td><td>200㎡ 이상</td></tr>
+  </tbody>
+</table>
+
+<h4>공급 용지와 면적 한도</h4>
+
+<table class="data">
+  <thead><tr><th style="width:30%">용지 종류</th><th style="width:30%">면적 한도</th><th>비고</th></tr></thead>
+  <tbody>
+    <tr><td>주택용지<br><span class="mini-note">단독주택용지(주거전용·블록형·점포겸용) 등</span></td><td><b>990㎡ 이하</b></td><td>1인당 한도. 초과 불가</td></tr>
+    <tr><td>사업용지(상업용지 등)</td><td><b>33㎡ 이상 1,100㎡ 이하</b></td><td>—</td></tr>
+    <tr><td>그 밖의 용지</td><td>시행자가 정함</td><td>공공주택용지·업무시설용지·종교용지 등</td></tr>
+  </tbody>
+</table>
+
+<div class="callout info">
+  <h4>990㎡ 한도가 리츠를 필요하게 만드는 이유</h4>
+  <p>개인은 아무리 보상금이 커도 주택용지 990㎡를 넘겨 받을 수 없습니다. 그래서 개별 토지주가 각자 받은 작은 필지로는 <b>공동주택·상업시설 같은 규모의 개발이 불가능</b>합니다. 여러 토지주의 대토보상권을 하나의 리츠에 현물출자해 <b>덩어리 용지</b>를 확보하는 것 — 이것이 대토리츠의 존재 이유이고, PM사가 토지주에게 설명해야 할 첫 번째 논리입니다.</p>
+</div>
+
+<h4>금액 한도와 130% 규정</h4>
+<p>대토로 공급받을 수 있는 금액은 <b>대토보상금액의 130%까지</b>이며, 이 범위에서 사업시행자가 <b>수의계약</b>으로 공급할 수 있습니다. 초과분은 토지주(또는 리츠)가 현금으로 납부합니다.</p>
+
+<div class="formula">
+  <div class="f-line">보상금 10억 원 → 대토 공급 가능 금액 <b>최대 13억 원</b></div>
+  <div class="f-line sub">→ 차액 3억 원은 자기자금 또는 사업비로 조달해야 함</div>
+</div>
+
+<h4>공급 우선순위</h4>
+<div class="steps">
+  <div class="step"><div class="step-n">1</div><div><b>현지인 우선</b> — 해당 지역 거주 토지소유자</div></div>
+  <div class="step"><div class="step-n">2</div><div>경합 시 <b>채권보상·대토보상 비율이 높은 자</b> 우선 (보상액 30억 원 이상이면 100%로 간주)</div></div>
+  <div class="step"><div class="step-n">3</div><div>최종 경합 시 <b>추첨</b></div></div>
+  <div class="step"><div class="step-n">4</div><div>그 다음 <b>부재부동산 소유자</b></div></div>
+</div>
+
+<div class="callout warn">
+  <h4>부재부동산 소유자 주의</h4>
+  <p>사업인정고시일 이전부터 해당 지역에 거주하지 않거나 30km 밖에 거주하는 소유자는 <b>부재부동산 소유자</b>로 분류되어, 토지거래허가구역 내·인접 시 <b>'양도세 + 1억 원'을 초과하는 보상금은 채권으로 의무 지급</b>됩니다. 이들은 대토 우선순위도 후순위입니다. PM사가 외지인 토지주를 주 타깃으로 삼으면 <b>대토 배정 자체를 못 받을 수 있다</b>는 점을 반드시 인지하십시오. 원주민 중심 접근이 정답인 구조적 이유입니다.</p>
+</div>
+
+<h3>2. 대토리츠의 법적 골격 — 부동산투자회사법</h3>
+
+<table class="data">
+  <thead><tr><th style="width:22%">조문</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>제26조의2</td><td>부동산투자회사의 현물출자 관련 특례</td></tr>
+    <tr><td>제26조의3 ①</td><td>대토보상권(토지로 보상받기로 결정된 권리)을 개발전문 부동산투자회사에 <b>현물출자</b>할 수 있음</td></tr>
+    <tr><td>제26조의3 ②</td><td>현물출자 가액은 <b>토지보상법 제68조에 따라 산정한 보상금액</b></td></tr>
+    <tr><td>제22조의3</td><td>자산관리회사(AMC) 설립인가 요건 — 국토교통부 인가</td></tr>
+  </tbody>
+</table>
+
+<h4>2021년 4월 6일 시행 개정의 핵심 (진선미 의원 등 11인 발의)</h4>
+
+<div class="two-col">
+  <div class="col-do">
+    <h4>완화된 것</h4>
+    <ul>
+      <li><b>특례등록 절차 신설</b> — 영업인가 전에 국토부에 등록 가능</li>
+      <li><b>대토보상권 조기 현물출자 허용</b> — 대토보상계약 시점부터 출자 가능</li>
+      <li>리츠 구성 소요기간이 <b>약 5년 → 약 1년</b>으로 단축 기대</li>
+    </ul>
+  </div>
+  <div class="col-dont">
+    <h4>강화된 것</h4>
+    <ul>
+      <li><b>대토리츠 주식 3년 전매제한</b> (대토보상계약 후 기산)</li>
+      <li>영업인가 전에는 <b>자금차입·사채발행 등 투자·운용행위 제한</b></li>
+      <li>편법대출에 의한 불법전매 차단이 입법 목적</li>
+    </ul>
+  </div>
+</div>
+
+<p class="src"><span class="tag ok">확인</span> 개정 배경은 3기 신도시 토지보상금이 주택시장으로 재유입되는 것을 막기 위함이었습니다. 2022~2026년 사이 대토리츠를 직접 겨냥한 추가 법 개정은 <span class="tag na">확인 불가</span>이나, 2026년 1월 1일 시행 시행령 개정으로 조특법 시행령 제73조상 <b>사후관리 대상에서 '대토보상권을 리츠에 현물출자한 뒤 취득 주식을 5년 이상 보유하는 경우'를 배제</b>하는 요건 완화가 있었습니다.</p>
+
+<h3>3. 대토리츠 설립·인가 절차</h3>
+
+<div class="steps big">
+  <div class="step"><div class="step-n">1</div><div><b>대토보상 신청 및 계약 체결</b><br><span class="mini-note">진안: 2027.12 공고 → 2028.12 협의·계약 예정. 모든 것의 기점</span></div></div>
+  <div class="step"><div class="step-n">2</div><div><b>리츠 발기설립</b> — 발기인, 정관, 최저자본금 요건 확인</div></div>
+  <div class="step"><div class="step-n">3</div><div><b>AMC 선정 및 자산관리위탁계약</b> — 국토부 인가받은 AMC 필수</div></div>
+  <div class="step"><div class="step-n">4</div><div><b>특례등록</b> — 국토부. 영업인가 전 대토보상권 조기 현물출자 가능<br><span class="mini-note">이 단계부터 투자·운용행위 제한이 적용됨</span></div></div>
+  <div class="step"><div class="step-n">5</div><div><b>현물출자 이행</b> — 대토보상권 → 리츠 주식</div></div>
+  <div class="step"><div class="step-n">6</div><div><b>영업인가</b> — 국토교통부장관. 사업계획·자금조달계획 심사</div></div>
+  <div class="step"><div class="step-n">7</div><div><b>택지 수의계약 공급</b> — LH가 리츠에 직접 공급(대토보상권 가액의 130% 범위)</div></div>
+  <div class="step"><div class="step-n">8</div><div><b>개발사업 시행</b> — PF, 인허가, 착공, 분양</div></div>
+  <div class="step"><div class="step-n">9</div><div><b>정산·배당·청산</b> — 주식 전매제한 3년 경과 후 출구</div></div>
+</div>
+
+<div class="callout info">
+  <h4>2011년 시행령 개정의 실무적 의미</h4>
+  <p>과거에는 사업시행자가 <b>대토보상자에게 공급 → 대토보상자가 리츠에 출자</b>하는 2단계였으나, 시행령 개정으로 <b>사업시행자가 리츠에 직접 수의계약 공급</b>할 수 있게 되었습니다. 절차가 단순해지고 중간 단계의 세무·등기 비용이 줄었습니다. 토지주 설명 시 이 점을 활용하십시오.</p>
+</div>
+
+<h3>4. 전매제한 — 이 사업의 형사 리스크 경계선</h3>
+
+<div class="callout danger">
+  <h4>적법한 이전은 단 두 가지뿐입니다</h4>
+  <ol class="tight">
+    <li><b>상속</b></li>
+    <li><b>부동산투자회사법에 따른 개발전문 부동산투자회사에 현물출자</b></li>
+  </ol>
+  <p>그 외의 <b>매매·증여·위임·신탁·담보설정·제소전화해</b> 등 일체의 방법으로 대토보상권을 이전하거나 이전을 약정하는 행위(보상금 선지급 대출 포함)는 전매에 해당합니다.</p>
+</div>
+
+<table class="data">
+  <thead><tr><th style="width:32%">항목</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>근거</td><td>토지보상법 제63조 전매금지 규정, 제93조의2 벌칙</td></tr>
+    <tr><td><b>형사 처벌</b></td><td><b>3년 이하 징역 또는 1억 원 이하 벌금</b></td></tr>
+    <tr><td>행정 제재</td><td>대토보상 → <b>현금보상으로 전환</b> (토지주가 대토 자체를 잃음)</td></tr>
+    <tr><td>세제</td><td>과세특례 배제 및 추징</td></tr>
+    <tr><td>사법 경향</td><td>전매금지는 강행규정으로 보아 계약 자체를 무효로 판단하는 경향 (택지개발촉진법 관련 대법원 2016다229393 등 참조) <span class="tag est">추정</span> — 대토보상권 사안 직접 적용 여부는 변호사 확인 필요</td></tr>
+    <tr><td>유권해석</td><td>국토부 2021.4.21 토지정책과-5268: 현물출자 외 방식의 실질적 전매를 폭넓게 전매로 해석</td></tr>
+  </tbody>
+</table>
+
+<div class="callout warn">
+  <h4>"형식은 현물출자, 실질은 매매"가 가장 흔한 함정</h4>
+  <p>대토업체가 리츠를 세우고 형식상 현물출자를 받되, 이면계약으로 <b>주식을 특정 금액에 매입</b>하기로 약정하는 구조가 업계에 존재합니다. 이는 실질 전매로 판단될 위험이 매우 크고, 대표 개인에게 형사책임이 귀속됩니다. <b>주식 3년 전매제한</b>과 결합하면 위험은 더 커집니다. 이런 제안이 들어오면 반드시 거절하고 서면 기록을 남기십시오.</p>
+</div>
+
+<h3>5. PM사가 외워야 할 조문 목록</h3>
+
+<table class="data compact">
+  <thead><tr><th style="width:38%">법률</th><th>조문</th></tr></thead>
+  <tbody>
+    <tr><td>공익사업을 위한 토지 등의 취득 및 보상에 관한 법률</td><td>제15조(보상계획 공고), 제63조(대토보상·전매금지), 제68조(보상액 산정), 제93조의2(벌칙)</td></tr>
+    <tr><td>부동산투자회사법</td><td>제22조의3(AMC 설립인가), 제26조의2, 제26조의3(대토보상권 현물출자)</td></tr>
+    <tr><td>조세특례제한법</td><td>제77조, 제77조의2, 제77조의3, 제133조(감면 종합한도)</td></tr>
+    <tr><td>공공주택 특별법</td><td>지구지정·지구계획 승인 절차</td></tr>
+    <tr><td>부동산개발업의 관리 및 육성에 관한 법률</td><td>제4조(등록), 제5조(전문인력 교육), 시행령 제9조·별표1</td></tr>
+    <tr><td>건축법</td><td>제57조(대지의 분할 제한)</td></tr>
+  </tbody>
+</table>
+
+<p class="src">전문은 국가법령정보센터(law.go.kr)에서 확인하십시오. 조문은 개정되므로 <b>설명회 자료를 만들 때마다 현행 조문을 다시 확인</b>하는 절차를 사내 규정으로 두는 것을 권합니다.</p>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="3">← 이해관계자</button><button class="pn-btn" data-goto="5">세제 전략 →</button></div></section><section class="panel s-p5" id="panel-5" role="tabpanel" aria-labelledby="tab-5" hidden><div class="panel-head"><span class="ph-n">05</span><div><h2>5부 · 세제 전략</h2><p class="ph-d">감면·과세이연·일몰 시나리오</p></div></div><div class="panel-body"><div class="callout danger">
+  <h4>이 파트가 이 보고서에서 가장 중요합니다</h4>
+  <p>대토보상은 "땅을 공짜로 받는 것"이 아니라 <b>세금 유예를 대가로 개발 리스크를 떠안는 선택</b>입니다. 세제 유인이 사라지면 토지주가 대토를 선택할 이유가 대부분 사라지고, 그 순간 이 사업의 원재료 공급이 끊깁니다.</p>
+</div>
+
+<h3>1. 보상 방식별 양도소득세 감면율 비교</h3>
+
+<table class="data">
+  <thead><tr><th style="width:30%">보상 방식</th><th style="width:22%">감면율</th><th>근거·조건</th></tr></thead>
+  <tbody>
+    <tr><td>현금보상</td><td><b>15%</b></td><td>조특법 §77 ①</td></tr>
+    <tr><td>일반 채권보상</td><td><b>20%</b></td><td>조특법 §77 ①</td></tr>
+    <tr><td>채권 + 3년 만기 보유 특약</td><td><b>35%</b></td><td>공공주택 특별법 등에 따른 협의매수·수용</td></tr>
+    <tr><td>채권 + 5년 만기 보유 특약</td><td><b>45%</b></td><td>가장 높은 감면율</td></tr>
+    <tr class="row-key"><td><b>대토보상</b></td><td><b>40% 감면</b> 또는 <b>과세이연</b></td><td>조특법 §77의2. 둘 중 <b>택일</b></td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag ok">확인</span> 국가법령정보센터 조문 기준. 공통 요건으로 <b>사업인정고시일로부터 소급 2년 이전에 취득한 토지</b>여야 합니다. 이 요건 때문에 지구 발표 후 매수한 토지는 감면 대상이 아닙니다.</p>
+
+<div class="callout warn">
+  <h4>대토보상이 항상 최선은 아닙니다</h4>
+  <p>표를 보면 <b>채권 5년 만기 특약(45%)이 대토보상(40%)보다 감면율이 높습니다.</b> 대토의 진짜 장점은 감면율이 아니라 <b>과세이연 + 개발이익 참여</b>입니다. 이 사실을 숨기고 "대토가 세금이 제일 유리하다"고 설명하면 나중에 분쟁의 근거가 됩니다. 정직하게 비교표를 제시하는 PM사가 결국 신뢰를 얻습니다.</p>
+</div>
+
+<h3>2. 감면 40% vs 과세이연 — 어느 쪽을 권할 것인가</h3>
+
+<table class="data">
+  <thead><tr><th style="width:20%">구분</th><th style="width:40%">40% 세액감면</th><th>과세이연</th></tr></thead>
+  <tbody>
+    <tr><td>과세 시기</td><td>양도 시점에 즉시 신고·납부(감면 후 잔액)</td><td>대토 취득 후 <b>해당 대토를 양도할 때</b>로 이연</td></tr>
+    <tr><td>계산 방식</td><td>산출세액의 40% 감면</td><td>대토보상액이 총 보상액에서 차지하는 비율만큼 양도소득금액을 이연. 이후 대토의 취득가액에서 이연금액을 차감</td></tr>
+    <tr><td>감면한도</td><td>조특법 §133 종합한도 적용<br>(과세기간별·5년 합산 한도)</td><td>한도 개념이 다름 — 세무사 확인 필요</td></tr>
+    <tr><td>농어촌특별세</td><td>감면세액의 <b>20%</b> 부과</td><td>감면이 아니므로 즉시 부담 없음</td></tr>
+    <tr><td>유리한 경우</td><td>보상액이 작아 종합한도 내에서 감면을 온전히 받을 수 있는 경우<br>현금 유동성이 필요한 경우</td><td>보상액이 커서 감면한도를 초과하는 경우<br>대토를 장기 보유·개발할 의사가 확실한 경우</td></tr>
+    <tr><td>리스크</td><td>즉시 세부담 발생</td><td>사후관리 요건 위반 시 <b>추징</b>. 대토 처분 시 세부담 이월</td></tr>
+  </tbody>
+</table>
+
+<div class="callout info">
+  <h4>중복 적용 불가</h4>
+  <p>조세심판원은 조특법 §77의2에 대해 <b>양도소득금액의 일부는 감면, 나머지는 과세이연으로 나누어 적용할 수 없다</b>는 취지로 판단한 사례(조심2025서0462)가 있습니다. 즉 <b>택일</b>입니다. 신청 시 세액감면신청서 또는 과세이연신청서에 <b>대토보상 신청서와 대토보상 계약서 사본</b>을 첨부해 과세표준신고와 함께 제출해야 합니다.</p>
+</div>
+
+<h3>3. 세부담 시뮬레이션 (이해를 돕기 위한 예시)</h3>
+
+<div class="callout warn">
+  <p><b>아래 수치는 구조 이해용 가정 예시</b>입니다. 실제 세액은 취득가액·보유기간·장기보유특별공제·기본공제·누진세율·감면한도·지방소득세에 따라 크게 달라집니다. <b>대외 설명 자료로 그대로 사용하지 마십시오.</b> 반드시 세무사가 개별 산출한 수치를 쓰십시오.</p>
+</div>
+
+<table class="data">
+  <thead><tr><th style="width:34%">가정</th><th>값</th></tr></thead>
+  <tbody>
+    <tr><td>보상금(양도가액)</td><td>10억 원</td></tr>
+    <tr><td>취득가액 등</td><td>2억 원</td></tr>
+    <tr><td>양도차익(단순화)</td><td>8억 원</td></tr>
+    <tr><td>산출세액(가정)</td><td>2억 5,000만 원</td></tr>
+  </tbody>
+</table>
+
+<table class="data">
+  <thead><tr><th style="width:26%">선택</th><th style="width:24%">감면 전 세액</th><th style="width:24%">감면 효과</th><th>즉시 납부 개념</th></tr></thead>
+  <tbody>
+    <tr><td>현금보상 (15%)</td><td>2.5억</td><td>-3,750만</td><td>약 2.1억 + 농특세</td></tr>
+    <tr><td>채권 5년 특약 (45%)</td><td>2.5억</td><td>-1억 1,250만</td><td>약 1.4억 + 농특세<br><span class="mini-note">단 5년간 자금 묶임</span></td></tr>
+    <tr class="row-key"><td><b>대토 40% 감면</b></td><td>2.5억</td><td>-1억</td><td>약 1.5억 + 농특세<br><span class="mini-note">감면한도 적용 시 축소 가능</span></td></tr>
+    <tr class="row-key"><td><b>대토 과세이연</b></td><td>2.5억</td><td>이연</td><td><b>즉시 납부 없음</b><br><span class="mini-note">대토 양도 시점으로 이월</span></td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag est">추정 · 예시</span> 감면한도(조특법 §133)를 고려하면 감면액이 위 계산보다 줄어들 수 있습니다. 대토보상의 실질 매력은 <b>즉시 현금 유출이 없다</b>는 점에 있으며, 이것이 토지주 설득의 핵심 논리입니다.</p>
+
+<h3>4. 일몰 문제 — 사업의 스위치</h3>
+
+<table class="data">
+  <thead><tr><th style="width:24%">조문</th><th style="width:34%">내용</th><th style="width:20%">일몰</th><th>상태</th></tr></thead>
+  <tbody>
+    <tr class="row-bad"><td><b>제77조</b></td><td>공익사업용 토지 양도세 감면(현금 15%/채권 20%·35%·45%)</td><td><b>2026.12.31</b></td><td>미연장</td></tr>
+    <tr class="row-bad"><td><b>제77조의2</b></td><td><b>대토보상 40% 감면 또는 과세이연</b></td><td><b>2026.12.31</b></td><td><b>미연장</b></td></tr>
+    <tr class="row-ok"><td>제77조의3</td><td>개발제한구역 매수토지 양도세 감면</td><td>2028.12.31</td><td>3년 연장됨</td></tr>
+  </tbody>
+</table>
+
+<div class="callout danger">
+  <h4>혼동 금지 — 실무상 가장 흔한 오류</h4>
+  <p>2025년 세제개편에서 <b>3년 연장(2028년까지)된 것은 제77조의3(개발제한구역)</b>입니다. 대토보상 조항인 <b>제77조의2가 아닙니다.</b> 인터넷과 업계 자료에 이 둘을 뒤섞은 설명이 돌아다닙니다. 토지주에게 "대토 세제는 2028년까지 연장됐다"고 말하는 순간 허위 설명이 되고, 나중에 손해배상 청구의 근거가 됩니다.</p>
+</div>
+
+<h4>왜 아직 연장 논의가 없는가</h4>
+<p>제77조·제77조의2의 일몰이 2025년이 아니라 <b>2026년 말</b>이기 때문에 2025년 세제개편의 심의 대상이 아니었던 것으로 보입니다. 따라서 연장 여부는 통상 <b>2026년 세제개편안</b>(2026년 중 발표 → 연말 국회 처리)에서 결정될 가능성이 큽니다. <span class="tag est">추정 — 확정 아님</span></p>
+
+<h3>5. 진안지구에 대입한 일몰 시나리오</h3>
+
+<table class="data">
+  <thead><tr><th style="width:8%"></th><th style="width:26%">시나리오</th><th style="width:32%">사업 영향</th><th>PM사 대응</th></tr></thead>
+  <tbody>
+    <tr class="row-ok"><td class="sc">A</td><td><b>2029년 이후로 연장</b><br><span class="mini-note">가장 바람직</span></td><td>진안 협의·계약(2028.12)이 감면 대상에 포함. 대토 유인 유지</td><td>사업 적극 추진. 조직·인력 확대</td></tr>
+    <tr class="row-warn"><td class="sc">B</td><td><b>2027년까지만 연장</b></td><td>진안 계약 시점(2028.12)이 일몰 밖. 대토 유인 상실 위험</td><td>LH에 보상 일정 조기화 요청 캠페인. 대책위와 공동 대정부 건의</td></tr>
+    <tr class="row-bad"><td class="sc">C</td><td><b>미연장 종료</b></td><td>대토·현금·채권 모두 감면 소멸. 대토 신청률 급감 예상</td><td>과세이연 논리 중심으로 상품 재설계. 사업 규모 축소 또는 철수 검토</td></tr>
+    <tr class="row-warn"><td class="sc">D</td><td><b>연장하되 요건 강화</b><br><span class="mini-note">(한도 축소·거주요건 강화 등)</span></td><td>대상자 축소</td><td>타깃을 원주민·장기보유자로 재조준</td></tr>
+  </tbody>
+</table>
+
+<div class="callout action">
+  <h4>모니터링 체계 구축</h4>
+  <ul class="tight">
+    <li><b>기획재정부 세제실</b> 보도자료 및 세제개편안 발표(통상 7~8월) 정기 확인</li>
+    <li><b>국회 기획재정위원회</b> 조세소위 심사 일정 추적(통상 11~12월)</li>
+    <li>국가법령정보센터 조특법 <b>개정 알림</b> 설정</li>
+    <li>발표 즉시 대책위에 브리핑 자료 배포 → <b>정보 우위를 신뢰로 전환</b>하는 가장 효율적인 수단</li>
+  </ul>
+</div>
+
+<h3>6. 그 밖의 세무 쟁점</h3>
+
+<table class="data">
+  <thead><tr><th style="width:26%">항목</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>농어촌특별세</td><td>감면받은 세액의 <b>20%</b>를 신고·납부. 감면 효과 계산 시 반드시 차감할 것</td></tr>
+    <tr><td>감면 종합한도</td><td>조특법 §133. 과세기간별 한도와 5개 과세기간 합산 한도가 적용. 보상액이 큰 토지주일수록 감면보다 <b>이연</b>이 유리해지는 분기점 존재</td></tr>
+    <tr><td>취득세</td><td>대토 취득 시 별도 부담. 사업비 계획에 반영 필요</td></tr>
+    <tr><td>사후관리·추징</td><td>과세이연 후 요건 위반 시 추징. 다만 2026.1.1 시행 시행령 개정으로 <b>리츠에 현물출자한 뒤 주식을 5년 이상 보유</b>하는 경우는 사후관리 대상에서 제외 <span class="tag ok">확인</span></td></tr>
+    <tr><td>대토→현금 전환</td><td>대토보상 신청 후 확정적으로 대토를 취득하지 못한 상태에서 현금보상으로 전환한 경우에도 요건 충족 시 감면 적용이 인정된 국세 예규 존재</td></tr>
+    <tr><td>리츠 단계 과세</td><td>배당가능이익의 90% 이상 배당 시 법인세 소득공제 등 리츠 고유의 세제. 청산 시 주주 과세 설계 필요 <span class="tag est">추정</span> — 세무 검토 필수</td></tr>
+  </tbody>
+</table>
+
+<div class="callout info">
+  <h4>PM사의 세무 포지션</h4>
+  <p>PM사는 <b>세무 대리를 할 수 없습니다.</b> 세무사법상 세무 상담·신고 대리는 세무사의 업무입니다. PM사가 할 수 있는 것은 <b>구조 설명과 세무사 연결</b>까지입니다. 이 선을 넘으면 무자격 세무대리로 처벌될 수 있고, 잘못된 세무 안내는 곧바로 손해배상 청구로 이어집니다. <b>세무법인과의 제휴는 선택이 아니라 필수</b>입니다.</p>
+</div>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="4">← 제도와 법령</button><button class="pn-btn" data-goto="6">사업구조 →</button></div></section><section class="panel s-p6" id="panel-6" role="tabpanel" aria-labelledby="tab-6" hidden><div class="panel-head"><span class="ph-n">06</span><div><h2>6부 · 사업구조 설계</h2><p class="ph-d">리츠·신탁·조합 비교와 지배구조</p></div></div><div class="panel-body"><p class="lead">대토보상을 사업화하는 그릇은 <b>신탁 · 조합 · 리츠</b> 세 가지입니다. 어느 것을 택하느냐가 세제, 법적 안정성, 개발이익 귀속, 그리고 PM사의 형사 리스크를 동시에 결정합니다.</p>
+
+<h3>1. 구조별 비교</h3>
+
+<table class="data">
+  <thead><tr><th style="width:16%">구조</th><th style="width:26%">방식</th><th style="width:20%">실제 사례</th><th style="width:20%">경제성</th><th>법적 위험</th></tr></thead>
+  <tbody>
+    <tr class="row-bad"><td><b>先신탁<br>(전매형)</b></td><td>용지매매계약 전에 신탁. 업체가 보상금의 120% 수준으로 매입</td><td>수서역세권</td><td>양도세·취득세 감면을 포기하게 되어 실질 약 104% 수준</td><td><b>높음</b> — 간접보상 혜택 상실, 전매 논란</td></tr>
+    <tr class="row-bad"><td><b>後신탁<br>(전매형)</b></td><td>계약 후 신탁. 105~110% 매입</td><td>과천지식정보타운, 덕은지구</td><td>사업소득세(약 38%) 및 세무조사 위험</td><td><b>매우 높음</b> — 실질 전매로 판단 시 형사·현금전환</td></tr>
+    <tr class="row-bad"><td>현물출자 후<br>주식매도형</td><td>형식은 현물출자, 이면에서 주식을 특정금액 매입</td><td>—</td><td>개발이익 사유화</td><td><b>매우 높음</b> — 실질 전매 + 3년 전매제한 위반</td></tr>
+    <tr class="row-ok"><td><b>리츠<br>(현물출자·참여형)</b></td><td>대토보상권을 현물출자하고 개발이익을 배당으로 수취</td><td>동탄2 제일호, 인천검암역세권</td><td>과세이연 가능, 개발이익 참여</td><td><b>낮음</b> — 다만 주주 간 의견대립·청산세 이슈</td></tr>
+    <tr class="row-ok"><td><b>조합<br>(대토조합)</b></td><td>대책위 중심으로 조합 설립 후 조합이 PM·대토업체 선정</td><td>업계 권장 모델</td><td>개발이익 공유 측면 최선</td><td><b>낮음</b> — 조합 운영 역량이 관건</td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag ok">확인</span> 전매형 구조의 실질 수익률 수치는 법무법인 박앤정 공개 자료 기준입니다.</p>
+
+<div class="callout danger">
+  <h4>전매형 세 가지는 검토 대상에서 제외하십시오</h4>
+  <p>先신탁·後신탁·주식매도형은 <b>업계에서 실제로 가장 많이 쓰였지만</b> 동시에 국토부가 유권해석과 법 개정으로 지속적으로 막아온 구조입니다. "다들 이렇게 한다"는 말은 형사법정에서 아무런 항변이 되지 못합니다. 신규 진입자가 이 구조로 시작하면 첫 사업에서 대표가 형사처벌을 받고 끝날 수 있습니다.</p>
+</div>
+
+<h3>2. 권장 구조 — 조합 선행 + 리츠 실행</h3>
+
+<div class="flow">
+  <div class="flow-step"><span class="fs-n">1</span><b>대책위</b><br>토지주 조직</div>
+  <div class="flow-arrow">▶</div>
+  <div class="flow-step"><span class="fs-n">2</span><b>대토조합</b><br>의사결정 기구 설립</div>
+  <div class="flow-arrow">▶</div>
+  <div class="flow-step"><span class="fs-n">3</span><b>PM사 선정</b><br>경쟁 절차</div>
+  <div class="flow-arrow">▶</div>
+  <div class="flow-step"><span class="fs-n">4</span><b>대토보상 계약</b><br>LH와 체결</div>
+  <div class="flow-arrow">▶</div>
+  <div class="flow-step hl"><span class="fs-n">5</span><b>대토리츠</b><br>현물출자·특례등록</div>
+  <div class="flow-arrow">▶</div>
+  <div class="flow-step"><span class="fs-n">6</span><b>영업인가·개발</b><br>택지공급·PF·시공</div>
+  <div class="flow-arrow">▶</div>
+  <div class="flow-step"><span class="fs-n">7</span><b>배당·청산</b></div>
+</div>
+
+<p>이 구조의 장점은 세 가지입니다. 첫째, <b>토지주가 주체</b>이므로 개발이익 사유화 비판을 받지 않습니다. 둘째, PM사가 <b>수탁자 지위</b>에 머물러 전매 논란에서 자유롭습니다. 셋째, 조합이 PM을 <b>경쟁 선정</b>하므로 신규 진입자에게 기회가 열립니다.</p>
+
+<h3>3. 리츠 참여 주체별 역할 분담</h3>
+
+<table class="data">
+  <thead><tr><th style="width:22%">주체</th><th style="width:40%">역할</th><th>PM사와의 관계</th></tr></thead>
+  <tbody>
+    <tr><td><b>대토리츠(부동산투자회사)</b></td><td>사업 주체. 택지 취득, 개발, 분양, 배당</td><td>PM사의 발주처가 되는 법인</td></tr>
+    <tr><td><b>AMC(자산관리회사)</b></td><td>리츠의 자산 투자·운용 위탁 수행. 국토부 인가 필수</td><td>제휴 또는 자체 설립. 수수료 경쟁 관계일 수 있음</td></tr>
+    <tr><td><b>PM사</b></td><td>토지주 모집·조직화, LH 용지공급조건 협상, 사업기획·타당성 검토, 인허가, 시공사·PF 협의, 분양·임대 후 사업관리 총괄대행</td><td><b>본인</b></td></tr>
+    <tr><td>자산보관기관(신탁사 등)</td><td>리츠 자산의 보관</td><td>선임 지원</td></tr>
+    <tr><td>시공사</td><td>도급 시공, 책임준공</td><td>PM이 선정 주선</td></tr>
+    <tr><td>금융기관</td><td>브릿지론·PF</td><td>PM이 주선</td></tr>
+    <tr><td>사무수탁기관</td><td>일반사무 위탁</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<div class="callout info">
+  <h4>AMC와 PM의 경계</h4>
+  <p>법적으로 <b>자산의 투자·운용</b>은 AMC의 업무이고, PM사는 그 아래에서 <b>개발 실무를 대행</b>하는 위치입니다. 계약서에서 이 경계를 흐리면 무인가 자산운용 문제가 생길 수 있습니다. PM 용역계약서에는 "자산의 투자·운용 의사결정은 AMC와 리츠 이사회에 귀속한다"는 취지를 명시하십시오. <span class="tag est">추정</span> — 계약 문안은 변호사 검토 필수</p>
+</div>
+
+<h3>4. 리츠 지배구조 설계 — 분쟁을 미리 막는 장치</h3>
+
+<p>동탄2 사례 연구에서 확인된 상위 리스크 중 하나가 <b>설립·인가 단계의 주주 간 의견대립</b>이었습니다. 토지주 수십~수백 명이 주주가 되는 구조에서는 지배구조 설계가 곧 사업 안정성입니다.</p>
+
+<table class="data">
+  <thead><tr><th style="width:30%">설계 항목</th><th>권장 사항</th></tr></thead>
+  <tbody>
+    <tr><td>의결권 구조</td><td>현물출자 가액 비례. 다만 소수주주 보호 장치(중요사항 가중정족수) 병행</td></tr>
+    <tr><td>이사회 구성</td><td>토지주 대표 + 전문가 이사 혼합. 토지주 단독 과반 또는 업체 단독 과반 모두 위험</td></tr>
+    <tr><td>주주 간 협약서</td><td>사업계획 변경, 시공사 선정, 추가 출자, 분양가 결정, 청산 시기의 <b>의사결정 정족수</b>를 사전 확정</td></tr>
+    <tr><td>교착 해소 조항</td><td>Deadlock 발생 시 절차(조정 → 지분 매수청구 등) 명시</td></tr>
+    <tr><td>정보 공개</td><td>분기 사업보고, 자금집행 내역 공개. <b>불신이 분쟁의 90%</b></td></tr>
+    <tr><td>PM 해임 조항</td><td>토지주가 PM을 해임할 수 있는 요건과 정산 방법. <b>이걸 넣는 PM사가 신뢰를 얻습니다</b></td></tr>
+    <tr><td>전매제한 고지</td><td>주식 3년 전매제한을 정관·협약서·설명자료에 <b>중복 명시</b></td></tr>
+  </tbody>
+</table>
+
+<h3>5. 구조 선택 체크리스트</h3>
+
+<div class="checklist">
+  <label><input type="checkbox"> 토지주가 개발이익 참여를 원하는가, 아니면 조기 현금화를 원하는가</label>
+  <label><input type="checkbox"> 대토 신청 예상 규모가 공동주택·상업시설 개발이 가능한 수준인가</label>
+  <label><input type="checkbox"> 주주가 될 토지주 수가 몇 명인가 (많을수록 조합 선행이 유리)</label>
+  <label><input type="checkbox"> 3년 주식 전매제한을 토지주가 수용할 수 있는가</label>
+  <label><input type="checkbox"> 과세이연 선택 시 5년 이상 주식 보유가 가능한가</label>
+  <label><input type="checkbox"> 추가 출자(130% 초과분·사업비) 여력이 있는가</label>
+  <label><input type="checkbox"> AMC를 자체 설립할 것인가, 제휴할 것인가</label>
+  <label><input type="checkbox"> 시공사 책임준공 확약을 받을 수 있는 규모인가</label>
+</div>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="5">← 세제 전략</button><button class="pn-btn" data-goto="7">선행사례 →</button></div></section><section class="panel s-p7" id="panel-7" role="tabpanel" aria-labelledby="tab-7" hidden><div class="panel-head"><span class="ph-n">07</span><div><h2>7부 · 선행사례 벤치마킹</h2><p class="ph-d">동탄2·3기 신도시 실적</p></div></div><div class="panel-body"><p class="lead">대토리츠는 2010년 도입 이후 16년이 지났지만 성공 사례가 손에 꼽습니다. 그 이유를 정확히 아는 것이 신규 진입자의 유일한 방어막입니다.</p>
+
+<h3>1. 대토개발리츠의 역사</h3>
+
+<div class="timeline compact">
+  <div class="tl-item"><div class="tl-year">2007.10</div><div class="tl-body">토지보상법 제63조 개정으로 <b>대토보상 제도 도입</b></div></div>
+  <div class="tl-item"><div class="tl-year">2010.04</div><div class="tl-body">대토보상 활성화를 위해 <b>대토개발리츠 제도 도입</b></div></div>
+  <div class="tl-item"><div class="tl-year">2011.12</div><div class="tl-body">택지개발촉진법 시행령 개정 — 사업시행자가 리츠에 <b>직접 수의계약 공급</b> 허용, 130% 범위 규정</div></div>
+  <div class="tl-item"><div class="tl-year">2012~2014</div><div class="tl-body"><b>화성 동탄2지구 시범사업</b> 추진. 2014년 동탄2 제일호 대토개발리츠 영업인가</div></div>
+  <div class="tl-item"><div class="tl-year">2019~2020</div><div class="tl-body">불법전매·편법대출 문제 부각. 국토부 유권해석으로 영업인가 전 현물출자 제한</div></div>
+  <div class="tl-item"><div class="tl-year">2021.04.06</div><div class="tl-body">부동산투자회사법 개정 시행 — <b>특례등록 신설 + 주식 3년 전매제한</b></div></div>
+  <div class="tl-item"><div class="tl-year">2026.01</div><div class="tl-body">조특법 시행령 개정 — 리츠 현물출자 후 5년 이상 주식 보유 시 <b>사후관리 배제</b></div></div>
+</div>
+
+<h3>2. 화성 동탄2 제일호 대토개발리츠 — 국내 최초 사례</h3>
+
+<table class="data">
+  <thead><tr><th style="width:26%">항목</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>위치</td><td>화성 동탄2지구 <span class="mini-note">← 진안지구와 같은 화성시. 지역 레퍼런스로 활용 가치 높음</span></td></tr>
+    <tr><td>성격</td><td>대토보상 활성화 목적의 <b>시범사업</b></td></tr>
+    <tr><td>영업인가</td><td>2014년</td></tr>
+    <tr><td>PM</td><td>㈜미래피엠</td></tr>
+    <tr><td>학술 분석</td><td>김준완·김종진, 「대토개발리츠의 리스크분석을 통한 개선방안 연구」, <i>주거환경</i> 제16권 1호(2018), 한국주거환경학회, 245–256면</td></tr>
+  </tbody>
+</table>
+
+<h4>동탄2 관계자 대상 Fuzzy-AHP 분석이 도출한 상위 리스크</h4>
+
+<div class="risk-rank">
+  <div class="rr-item"><span class="rr-n">1</span><div><b>AMC·PM사업자 등 전문사업자에 대한 정보 부족</b><br><span class="mini-note">토지주가 누가 유능한 사업자인지 판단할 근거가 없음</span></div></div>
+  <div class="rr-item"><span class="rr-n">2</span><div><b>설립·인가 단계의 주주 간 의견대립</b><br><span class="mini-note">다수 토지주가 주주가 되는 구조의 필연적 문제</span></div></div>
+  <div class="rr-item"><span class="rr-n">3</span><div><b>현물출자 이후 양도세 과세이연의 종료</b><br><span class="mini-note">이연이 끝나는 시점의 세부담이 배당을 잠식</span></div></div>
+  <div class="rr-item"><span class="rr-n">4</span><div><b>공급 용지와 금액 확정의 지연</b><br><span class="mini-note">사업계획을 확정할 수 없어 PF·시공 협의가 진행되지 않음</span></div></div>
+</div>
+
+<div class="callout action">
+  <h4>PM사가 여기서 얻어야 할 교훈</h4>
+  <p>1순위 리스크가 <b>"사업자에 대한 정보 부족"</b>이라는 사실은 신규 진입자에게 결정적인 시사점입니다. 토지주가 원하는 것은 화려한 실적이 아니라 <b>검증 가능한 정보</b>입니다. 재무제표, 등록증, 인력 이력, 계약 조건, 수수료 구조, 해임 조항을 먼저 공개하는 PM사는 실적 없이도 신뢰를 살 수 있습니다. 이것이 미래피엠 같은 실적사와 겨룰 수 있는 유일한 축입니다.</p>
+</div>
+
+<h3>3. 3기 신도시 대토보상 계약률 — 냉혹한 실적</h3>
+
+<table class="data">
+  <thead><tr><th style="width:32%">지구</th><th style="width:24%">대토보상 계약률</th><th>비고</th></tr></thead>
+  <tbody>
+    <tr><td>하남 교산</td><td class="pct">12%</td><td>신청비율은 19.46%로 보도된 바 있으나 계약률은 12%로 마감</td></tr>
+    <tr><td>인천 계양</td><td class="pct">10%</td><td>—</td></tr>
+    <tr><td>과천 과천</td><td class="pct">14%</td><td>—</td></tr>
+    <tr class="row-key"><td><b>정부 목표</b></td><td class="pct goal">최대 50%</td><td>전체 토지보상 대비</td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag ok">확인</span> 헤럴드경제 2021년 12월 19일 보도 기준. 목표와 실적의 격차가 <b>3~5배</b>에 달합니다.</p>
+
+<h4>계약률이 낮은 구조적 이유</h4>
+<div class="reasons">
+  <div class="reason"><b>① 시간</b><br>대토는 조성 완료까지 5~10년을 기다려야 합니다. 고령 토지주에게 이는 사실상 불가능한 선택입니다.</div>
+  <div class="reason"><b>② 추가 자금</b><br>130% 초과분과 개발비를 스스로 조달해야 합니다. 보상금을 생활자금으로 쓰려는 토지주는 애초에 대상이 아닙니다.</div>
+  <div class="reason"><b>③ 불확실성</b><br>용지 위치·규모·가격이 늦게 확정됩니다. "어디 땅을 받는지도 모르고 계약하라"는 요구가 됩니다.</div>
+  <div class="reason"><b>④ 불신</b><br>대토업체의 전매·편법대출 사건이 반복되며 제도 자체에 대한 불신이 쌓였습니다.</div>
+  <div class="reason"><b>⑤ 대안의 존재</b><br>채권 5년 특약(45% 감면)이 세제상 더 유리하고 리스크가 없습니다.</div>
+</div>
+
+<div class="callout warn">
+  <h4>사업계획 수립 기준선</h4>
+  <p>진안지구 대토 신청률을 <b>10~15%</b>로 놓고 손익분기를 계산하십시오. 20% 이상을 전제로 조직과 고정비를 설계하면, 2028년 실제 계약률이 나왔을 때 자금이 이미 소진된 상태에서 무리한 영업을 하게 됩니다. 대토업계의 사고는 대부분 이 경로로 발생합니다.</p>
+</div>
+
+<h3>4. 그 밖의 대토리츠 사례</h3>
+
+<table class="data">
+  <thead><tr><th style="width:30%">사례</th><th style="width:22%">성격</th><th>비고</th></tr></thead>
+  <tbody>
+    <tr><td>인천검암역세권 대토리츠</td><td>대토리츠</td><td>미래피엠 PM 실적</td></tr>
+    <tr><td>동탄역 리치안프라자 / 디스퀘어프라자 / 우암프라자</td><td>상가리츠</td><td>생활대책용지 기반 상가조합 사업 <span class="mini-note">← 대토와 별개의 수익원 모델</span></td></tr>
+    <tr><td>경산대임지구</td><td>대토 관련</td><td>—</td></tr>
+    <tr><td>수서역세권 / 과천지식정보타운 / 덕은지구</td><td>신탁 전매형</td><td>전매형 구조의 실제 사례. <b>반면교사</b></td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag na">확인 불가</span> 국토교통부 리츠정보시스템(reits.molit.go.kr)에 등록된 대토리츠의 전체 목록, 운용 AMC, 사업 규모, 실현 수익률은 본 보고서 범위에서 확보하지 못했습니다. <b>직접 조회해 정리하는 작업을 최우선 과제로 두십시오</b>(12부 참조). 이 데이터는 토지주 설명회의 신뢰도를 결정적으로 높입니다.</p>
+
+<h3>5. 분쟁·형사 사례</h3>
+
+<table class="data">
+  <thead><tr><th style="width:34%">유형</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>대토보상권 전매 관련 조세심판</td><td>조심2023중3407 등 다수. 전매·현물출자의 실질 판단이 쟁점</td></tr>
+    <tr><td>감면·이연 중복 적용 분쟁</td><td>조심2025서0462 — 감면과 과세이연의 분할 적용 불가</td></tr>
+    <tr><td>대토보상권 전매 후 대금 미수</td><td>매수자가 자력 없는 법인인 경우가 많아 승소해도 집행 곤란. <b>토지주 피해가 실제 발생하는 지점</b></td></tr>
+    <tr><td>불법전매 형사사건</td><td>토지보상법 제93조의2 적용. 개별 판결 상세는 <span class="tag na">확인 불가</span></td></tr>
+  </tbody>
+</table>
+
+<h3>6. 진안지구에 대입한 성공 조건</h3>
+
+<div class="conditions">
+  <div class="cond ok"><b>충족 가능</b><br>화성 동탄2 인근이라 지역 레퍼런스와 인력 확보가 용이. 삼성전자 배후수요로 분양성 양호</div>
+  <div class="cond warn"><b>노력 필요</b><br>토지주 조직화 — 복수 대책위 병존 상태에서 신뢰 확보</div>
+  <div class="cond warn"><b>노력 필요</b><br>정보 투명성 — 사업자 정보 부족이 1순위 리스크였음을 역이용</div>
+  <div class="cond bad"><b>통제 불가</b><br>세제 일몰 — 정부 결정에 달림</div>
+  <div class="cond bad"><b>통제 불가</b><br>보상 일정 — LH·부처 협의에 달림</div>
+</div>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="6">← 사업구조</button><button class="pn-btn" data-goto="8">PM사 설립 →</button></div></section><section class="panel s-p8" id="panel-8" role="tabpanel" aria-labelledby="tab-8" hidden><div class="panel-head"><span class="ph-n">08</span><div><h2>8부 · PM사 설립과 운영</h2><p class="ph-d">등록요건·조직·계약서</p></div></div><div class="panel-body"><p class="lead">PM사 설립 자체의 문턱은 높지 않습니다. 자본금 3억, 전문인력 2인, 사무실이면 됩니다. 진짜 문턱은 <b>매출이 없는 3년을 버티는 체력</b>입니다.</p>
+
+<h3>1. 부동산개발업 등록 — 언제 필요한가</h3>
+
+<table class="data">
+  <thead><tr><th style="width:34%">개발 유형</th><th>등록 대상 기준</th></tr></thead>
+  <tbody>
+    <tr><td>건축물</td><td>단일 연면적 <b>2,000㎡ 이상</b> 또는 연간 <b>5,000㎡ 이상</b></td></tr>
+    <tr><td>토지</td><td>단일 <b>3,000㎡ 이상</b> 또는 연간 <b>5,000㎡ 이상</b></td></tr>
+    <tr><td>주상복합</td><td>비주거용 연면적 2,000㎡(연간 5,000㎡) 이상이고 비주거 비율 30% 이상</td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag ok">확인</span> 자료에 따라 토지 기준을 "3,000㎡(연간 5,000㎡)" 또는 "5,000㎡(연간 10,000㎡)"로 달리 기재한 경우가 있습니다. <b>등록 전 한국부동산개발협회에 현행 기준을 직접 확인</b>하십시오.</p>
+
+<div class="callout info">
+  <h4>PM 용역만 하면 등록이 필요 없을 수 있습니다</h4>
+  <p>부동산개발업은 <b>타인에게 판매·임대할 목적으로 부동산을 개발하는 행위</b>를 업으로 하는 경우에 등록 대상입니다. PM사가 <b>순수 자문·관리 용역</b>만 제공하고 개발 주체가 리츠라면 등록이 불요할 수 있습니다. 다만 실질이 시행에 해당하면 등록 대상이 됩니다. 이 경계는 계약 형태와 실제 수행 업무에 따라 달라지므로 <b>반드시 변호사 확인</b>을 받으십시오. <span class="tag est">추정</span></p>
+  <p><b>실무 권고</b> — 등록 요건이 자본금 3억 수준으로 부담이 크지 않고, <b>등록증 자체가 토지주 신뢰의 근거</b>가 되므로 등록을 권장합니다. 동탄2 사례에서 1순위 리스크가 "사업자 정보 부족"이었음을 상기하십시오.</p>
+</div>
+
+<h3>2. 등록 3대 요건</h3>
+
+<table class="data">
+  <thead><tr><th style="width:18%">요건</th><th style="width:30%">기준</th><th>실무 메모</th></tr></thead>
+  <tbody>
+    <tr><td><b>자본금</b></td><td>주식회사 <b>3억 원 이상</b><br><span class="mini-note">개인은 영업용 자산평가액 기준으로 더 높게 요구됨</span></td><td>법인 설립 시부터 3억으로 설정. 증자보다 처음부터 맞추는 편이 간편</td></tr>
+    <tr><td><b>사무실</b></td><td>전용면적 <b>33㎡ 이상</b><br>제2종근린생활시설(사무소)·업무시설·판매시설</td><td>용도 확인 필수. 근린생활시설이라도 용도가 맞지 않으면 반려. <b>진안지구 인근(병점·동탄) 입지</b>가 영업상 유리</td></tr>
+    <tr><td><b>전문인력</b></td><td><b>2명 이상 상근</b><br>사전교육 이수 필수</td><td>가장 까다로운 요건. 4대보험 가입 증명으로 상근 확인</td></tr>
+  </tbody>
+</table>
+
+<h3>3. 부동산개발 전문인력 자격</h3>
+
+<p>시행령 별표1에 열거된 자격으로, 대표적으로 다음과 같습니다.</p>
+
+<div class="chips">
+  <span class="chip">변호사</span><span class="chip">공인회계사</span><span class="chip">감정평가사</span><span class="chip">건축사</span><span class="chip hl">공인중개사</span><span class="chip">법무사</span><span class="chip">세무사</span><span class="chip">건축·토목 등 기술사</span><span class="chip">부동산 관련 학위·경력자</span>
+</div>
+
+<div class="callout action">
+  <h4>토지 전문 부동산 경력자에게 유리한 지점</h4>
+  <p><b>공인중개사가 전문인력에 포함됩니다.</b> 대표 본인이 공인중개사 자격을 보유하고 있다면 사전교육만 이수하고 1명을 더 확보하면 요건이 충족됩니다. AMC의 자기자본 70억·전문인력 5인과 비교하면 진입 부담이 압도적으로 낮습니다.</p>
+</div>
+
+<h4>사전교육 실무</h4>
+<table class="data compact">
+  <thead><tr><th style="width:30%">항목</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>의무</td><td>부동산개발업법 제5조 제2항 — 사전교육 및 연수교육 이수</td></tr>
+    <tr><td>한국부동산원 기준</td><td>교육비 <b>93만 5천 원</b>(VAT 포함), <b>9일 과정</b>, 회차별 30명 내외. 2026년 3월·8월 접수 회차 운영</td></tr>
+    <tr><td>그 밖의 기관</td><td>한국부동산개발협회(02-512-4750), 건설기술교육원(032-460-0242), 한국부동산개발전문가협회(02-6951-0369), 광주대학교(062-670-2836)</td></tr>
+  </tbody>
+</table>
+
+<div class="callout warn">
+  <p><b>정원이 회차당 30명 내외로 적습니다.</b> 2026년 8월 회차 접수 가능 여부를 즉시 확인하고, 마감되었다면 다음 회차를 예약하십시오. 이 교육이 지연되면 등록 전체가 지연됩니다. <b>지금 당장 할 수 있는 가장 구체적인 행동입니다.</b></p>
+</div>
+
+<h3>4. 등록 절차와 필요서류</h3>
+
+<div class="steps">
+  <div class="step"><div class="step-n">1</div><div><b>법인 설립 등기</b> — 상호·자본금 3억·본점·임원·사업목적(부동산개발업 포함) 결정</div></div>
+  <div class="step"><div class="step-n">2</div><div><b>사업자등록</b></div></div>
+  <div class="step"><div class="step-n">3</div><div><b>사무실 확보</b> — 전용 33㎡ 이상, 용도 적합 확인</div></div>
+  <div class="step"><div class="step-n">4</div><div><b>전문인력 채용 및 사전교육 이수</b></div></div>
+  <div class="step"><div class="step-n">5</div><div><b>한국부동산개발협회 등록 신청</b> — 방문·우편·온라인</div></div>
+</div>
+
+<h4>필요서류</h4>
+<ul class="doc-list">
+  <li>법인등기사항전부증명서</li>
+  <li>사무실 등기사항전부증명서, 건축물대장, 위치도, 평면도</li>
+  <li>전문인력 4대보험 가입증명서, 고용계약서</li>
+  <li>전문인력 사전교육 수료증</li>
+  <li>자본금 확인 서류</li>
+</ul>
+
+<h3>5. 조직 구성 — 최소 실행 단위</h3>
+
+<table class="data">
+  <thead><tr><th style="width:22%">직무</th><th style="width:20%">인원</th><th>담당 업무</th></tr></thead>
+  <tbody>
+    <tr><td><b>대표</b></td><td>1</td><td>대책위 관계, LH·화성시 대외협상, 전체 총괄. <b>토지 전문 경력이 직접 발휘되는 자리</b></td></tr>
+    <tr><td>개발기획</td><td>1</td><td>사업성 검토, 토지이용계획 분석, 수지분석, 인허가</td></tr>
+    <tr><td>토지주 관리</td><td>1~2</td><td>명부 관리, 설명회 운영, 동의서·계약 관리, 민원 응대</td></tr>
+    <tr><td>금융·재무</td><td>1</td><td>PF 주선, 자금계획, 회계</td></tr>
+    <tr><td>외부 자문</td><td>—</td><td>법무법인·세무법인·감정평가법인·AMC (고정 인건비 아닌 용역)</td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag est">추정</span> 최소 4~5인 구성. 초기에는 대표 + 전문인력 1인 + 지원 1인으로 시작해 보상계획 공고(2027.12) 시점에 확대하는 단계적 편성이 현실적입니다.</p>
+
+<h3>6. PM 용역계약서 필수 조항</h3>
+
+<div class="callout action">
+  <h4>계약서가 곧 리스크 관리입니다</h4>
+  <p>아래 조항이 빠진 계약서는 분쟁 시 PM사에게 불리하게 작용하거나, 반대로 토지주에게 불공정하다는 이유로 무효화될 수 있습니다.</p>
+</div>
+
+<table class="data">
+  <thead><tr><th style="width:28%">조항</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>업무 범위</td><td>수행 업무를 <b>열거</b>하고, 자산의 투자·운용 의사결정은 리츠·AMC에 귀속함을 명시</td></tr>
+    <tr><td>수수료 구조</td><td>착수금·단계별 기성·성공보수의 <b>금액 또는 산정기준과 지급 시점</b>을 명확히. 총사업비 기준인지 분양수입 기준인지 특정</td></tr>
+    <tr><td>지급 조건</td><td>기성 지급의 <b>선행조건</b>(마일스톤 달성)을 구체적으로 규정</td></tr>
+    <tr><td><b>보장 배제</b></td><td>"수익 또는 원금을 보장하지 않는다"는 조항을 <b>명시</b>. PM사를 지키는 조항</td></tr>
+    <tr><td><b>해지·해임</b></td><td>토지주(조합·리츠)가 PM을 해임할 수 있는 요건과 기 수행분 정산 방법</td></tr>
+    <tr><td>비밀유지·개인정보</td><td>토지주 정보의 수집·이용·보관·파기 절차</td></tr>
+    <tr><td>이해상충</td><td>PM사 또는 특수관계인이 해당 지구 내 토지·주식을 취득하는 것에 대한 제한·공개 의무</td></tr>
+    <tr><td>보고 의무</td><td>정기 사업보고, 자금집행 내역 공개 주기</td></tr>
+    <tr><td>재위탁 제한</td><td>핵심 업무의 무단 재위탁 금지</td></tr>
+    <tr><td>분쟁 해결</td><td>관할 법원 또는 중재 합의</td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag na">확인 불가</span> PM 수수료의 표준 요율은 공개된 시장 자료가 없습니다. 착수금 + 단계별 기성 + 성공보수 조합이 관행<span class="tag est">추정</span>이나, 구체적 요율은 지구·계약별 편차가 크므로 경쟁 선정 과정에서 형성됩니다.</p>
+
+<h3>7. 등록 후 유지 의무</h3>
+
+<div class="checklist">
+  <label><input type="checkbox"> 전문인력 2인 <b>상근 상태 유지</b> — 퇴사 시 즉시 충원. 지자체 실태조사 대상</label>
+  <label><input type="checkbox"> 연수교육 정기 이수</label>
+  <label><input type="checkbox"> 자본금 요건 유지</label>
+  <label><input type="checkbox"> 사무실 실재 유지 — 현장조사 대응</label>
+  <label><input type="checkbox"> 거짓·과장 광고 금지 (부동산개발업법 규제)</label>
+  <label><input type="checkbox"> 등록사항 변경 시 신고</label>
+</div>
+
+<p class="src"><span class="tag ok">확인</span> 서울시는 2024년 관내 부동산개발업 등록업체 987곳 전수 실태조사를 실시했습니다. 자본금·시설·전문인력 요건을 서면과 현장조사로 확인하는 방식입니다. <b>등록만 하고 요건을 유지하지 않으면 등록 취소 위험</b>이 있습니다.</p>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="7">← 선행사례</button><button class="pn-btn" data-goto="9">자금과 수익 →</button></div></section><section class="panel s-p9" id="panel-9" role="tabpanel" aria-labelledby="tab-9" hidden><div class="panel-head"><span class="ph-n">09</span><div><h2>9부 · 자금 계획과 수익모델</h2><p class="ph-d">운전자금·수수료·조달구조</p></div></div><div class="panel-body"><p class="lead">이 사업의 자금 구조는 <b>"3~4년 순지출 → 이후 대형 수익"</b>이라는 극단적인 J커브를 그립니다. 이 곡선의 바닥을 견딜 수 있는지가 진입 가능 여부를 결정합니다.</p>
+
+<div class="callout warn">
+  <h4>이 파트의 수치에 관하여</h4>
+  <p>PM사 운전자금과 수수료 요율에 대한 공개된 시장 자료는 존재하지 않습니다. 아래 수치는 <b>등록 요건·인건비 수준·사업 기간이라는 확인된 요소로부터 역산한 추정</b>이며, 투자 판단의 근거가 아니라 <b>계획 수립의 출발점</b>으로만 사용하십시오. <span class="tag est">추정</span></p>
+</div>
+
+<h3>1. 초기 소요 자금</h3>
+
+<table class="data">
+  <thead><tr><th style="width:34%">항목</th><th style="width:24%">금액</th><th>비고</th></tr></thead>
+  <tbody>
+    <tr><td>법인 자본금</td><td>3억 원</td><td>등록 요건. 운전자금으로 활용 가능하나 요건 유지 필요 <span class="tag ok">확인</span></td></tr>
+    <tr><td>법인 설립·등록 비용</td><td>수백만 원</td><td>등기, 등록면허세, 대행 수수료 <span class="tag est">추정</span></td></tr>
+    <tr><td>전문인력 사전교육</td><td>1인당 93만 5천 원</td><td>2인 기준 약 187만 원 <span class="tag ok">확인</span></td></tr>
+    <tr><td>사무실 보증금·인테리어</td><td>수천만 원</td><td>전용 33㎡ 이상, 병점·동탄 인근 <span class="tag est">추정</span></td></tr>
+    <tr><td>초기 사업성 검토 용역</td><td>수천만 원</td><td>감정평가·설계 개략, 수지분석 <span class="tag est">추정</span></td></tr>
+  </tbody>
+</table>
+
+<h3>2. 연간 운영비 구조 (추정)</h3>
+
+<table class="data">
+  <thead><tr><th style="width:30%">항목</th><th style="width:24%">연간</th><th>메모</th></tr></thead>
+  <tbody>
+    <tr><td>인건비 (대표 제외 3~4인)</td><td>2억 ~ 3억 원</td><td>가장 큰 고정비. 단계적 증원으로 통제</td></tr>
+    <tr><td>사무실 임차·관리</td><td>2천만 ~ 4천만 원</td><td>—</td></tr>
+    <tr><td>설명회·홍보물·인쇄</td><td>2천만 ~ 5천만 원</td><td>회차당 수백만 원. 대책위 규모에 비례</td></tr>
+    <tr><td>외부 자문 (법무·세무·평가)</td><td>3천만 ~ 1억 원</td><td>필수 지출. 아끼면 안 되는 항목</td></tr>
+    <tr><td>기타 (교통·전산·보험 등)</td><td>2천만 원</td><td>—</td></tr>
+    <tr class="row-key"><td><b>합계</b></td><td><b>약 3억 ~ 5억 원</b></td><td>—</td></tr>
+  </tbody>
+</table>
+
+<h3>3. 현금흐름 시나리오 (진안 기준)</h3>
+
+<table class="data">
+  <thead><tr><th style="width:16%">연도</th><th style="width:22%">단계</th><th style="width:20%">수입</th><th style="width:20%">지출(누적)</th><th>상태</th></tr></thead>
+  <tbody>
+    <tr class="row-bad"><td>2026 (하반기)</td><td>설립·조직화 착수</td><td>0</td><td>약 2~4억</td><td>순지출</td></tr>
+    <tr class="row-bad"><td>2027</td><td>조서 대응·설명회</td><td>0 또는 소액 자문료</td><td>약 5~9억</td><td>순지출</td></tr>
+    <tr class="row-bad"><td>2028</td><td>보상계약·리츠 준비</td><td>착수금 발생 가능</td><td>약 8~14억</td><td>순지출 정점</td></tr>
+    <tr class="row-warn"><td>2029</td><td>특례등록·영업인가</td><td><b>PM 기성 개시</b></td><td>—</td><td>손익분기 진입</td></tr>
+    <tr class="row-ok"><td>2030~2033</td><td>인허가·착공·분양</td><td>단계별 기성</td><td>—</td><td>흑자</td></tr>
+    <tr class="row-ok"><td>준공 후</td><td>정산·배당</td><td>성공보수</td><td>—</td><td>회수 완료</td></tr>
+  </tbody>
+</table>
+
+<div class="callout danger">
+  <h4>필요 자금의 결론</h4>
+  <p>단독 진입 시 <b>최소 8~15억 원의 무수익 기간 자금</b>이 필요합니다(<span class="tag est">추정</span>). 이 금액을 확보하지 못한 상태로 시작하면, 2028년 자금 소진 국면에서 <b>확정수익 약속·보상금 선지급 같은 불법 영역</b>으로 밀려나게 됩니다. 대토업계 사고의 거의 전부가 이 경로입니다. <b>자금이 부족하다면 3부의 시나리오 B(컨소시엄 참여형)로 시작하십시오.</b></p>
+</div>
+
+<h3>4. 수익 모델</h3>
+
+<table class="data">
+  <thead><tr><th style="width:22%">단계</th><th style="width:26%">수익 항목</th><th>발생 시점 / 구조</th></tr></thead>
+  <tbody>
+    <tr><td>① 착수</td><td>착수금 / 자문료</td><td>조합·리츠와 PM 계약 체결 시. 소액. 조직 유지비 성격</td></tr>
+    <tr><td>② 진행</td><td>단계별 기성 PM fee</td><td>특례등록·영업인가·택지계약·착공·분양개시 등 마일스톤 연동</td></tr>
+    <tr><td>③ 완료</td><td>성공보수</td><td>준공·정산 후 개발이익 연동</td></tr>
+    <tr><td>부가</td><td>상가조합 PM</td><td>생활대책용지 기반. <b>대토와 별개의 수익원</b>. 동탄2 상가리츠가 선례</td></tr>
+    <tr><td>부가</td><td>분양·임대 관리</td><td>준공 후 운영 단계</td></tr>
+  </tbody>
+</table>
+
+<div class="callout info">
+  <h4>수수료 설계의 원칙</h4>
+  <p>착수금을 크게 잡으면 토지주 저항이 크고 "먹튀" 의심을 삽니다. 반대로 성공보수 비중을 지나치게 높이면 PM사가 버티지 못합니다. <b>운영비를 겨우 충당하는 수준의 기성 + 개발이익 연동 성공보수</b> 구조가 토지주 설득과 PM사 생존을 동시에 만족시키는 지점입니다. 요율보다 <b>산정기준(총사업비 vs 분양수입)과 지급 시점</b>이 실제 수익을 좌우한다는 점을 잊지 마십시오.</p>
+</div>
+
+<h3>5. AMC — 자체 설립 vs 제휴</h3>
+
+<table class="data">
+  <thead><tr><th style="width:26%">구분</th><th style="width:37%">자체 설립</th><th>기존 AMC 제휴</th></tr></thead>
+  <tbody>
+    <tr><td>요건</td><td><b>자기자본 70억 원 이상</b>(자본금+잉여금), 상근 자산운용전문인력 <b>5인 이상</b>, 이해상충 방지체계, 전산·물적설비, 국토부 설립인가</td><td>없음</td></tr>
+    <tr><td>기간</td><td>인가 준비·심사에 상당 기간 소요</td><td>즉시</td></tr>
+    <tr><td>비용</td><td>매우 높음</td><td>운용보수 분담</td></tr>
+    <tr><td>수익</td><td>운용보수 직접 수취</td><td>PM fee만 수취</td></tr>
+    <tr class="row-key"><td><b>권고</b></td><td>신규 진입자에게 비현실적</td><td><b>제휴가 정답</b></td></tr>
+  </tbody>
+</table>
+
+<p class="src"><span class="tag ok">확인</span> 부동산투자회사법 제22조의3. 2021년 개정으로 '자본금 70억'에서 <b>'자기자본 70억'</b>으로 기준이 변경되고 유지의무가 부과되었습니다. 잉여금을 포함할 수 있게 되어 중소 운용사의 진입이 다소 완화된 측면이 있습니다.</p>
+
+<h3>6. 개발 단계 자금조달 구조</h3>
+
+<div class="flow vertical">
+  <div class="flow-step"><b>현물출자</b><br>대토보상권 → 리츠 자본</div>
+  <div class="flow-arrow">▼</div>
+  <div class="flow-step"><b>브릿지론</b><br>초기 사업비·인허가비</div>
+  <div class="flow-arrow">▼</div>
+  <div class="flow-step"><b>PF(본대출)</b><br>택지 잔금·공사비</div>
+  <div class="flow-arrow">▼</div>
+  <div class="flow-step"><b>분양수입</b><br>PF 상환</div>
+  <div class="flow-arrow">▼</div>
+  <div class="flow-step hl"><b>정산·배당</b></div>
+</div>
+
+<div class="callout warn">
+  <h4>영업인가 전 자금조달 제한에 유의</h4>
+  <p>특례등록 후 영업인가 전까지는 <b>자금차입·사채발행 등 투자·운용행위가 제한</b>됩니다. 즉 특례등록만으로 브릿지론을 일으킬 수 없습니다. 이 구간의 사업비는 PM사 또는 발기인이 부담하거나 별도 구조로 조달해야 하며, <b>여기서 자금 압박이 발생해 편법대출로 흐르는 것이 과거 사고의 전형</b>입니다.</p>
+</div>
+
+<h3>7. 토지주 자기부담금 — 설명 시 반드시 알려야 할 것</h3>
+
+<table class="data">
+  <thead><tr><th style="width:34%">부담 항목</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>130% 초과 대토 대금</td><td>보상금 대비 초과 공급분은 현금 납부</td></tr>
+    <tr><td>양도소득세·농어촌특별세</td><td>감면 선택 시 즉시 발생 (이연 선택 시 이월)</td></tr>
+    <tr><td>취득세</td><td>대토 취득 시</td></tr>
+    <tr><td>사업비 분담</td><td>PF로 조달되나 사업 실패 시 손실은 주주에게 귀속</td></tr>
+    <tr><td>기회비용</td><td>준공·배당까지 5~10년간 자금 동결. <b>주식 3년 전매제한</b> 병존</td></tr>
+  </tbody>
+</table>
+
+<div class="callout danger">
+  <h4>"땅을 공짜로 받는다"는 설명은 절대 금지</h4>
+  <p>대토보상은 <b>조성원가로 택지를 매수하고 그 위에 개발사업을 하는 것</b>입니다. 이 사실을 명확히 전달하지 않으면, 자기부담금 청구 시점에 대규모 분쟁이 발생합니다. 설명회 자료 첫 장에 자기부담 항목을 넣는 PM사가 결국 오래갑니다.</p>
+</div>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="8">← PM사 설립</button><button class="pn-btn" data-goto="10">리스크 →</button></div></section><section class="panel s-p10" id="panel-10" role="tabpanel" aria-labelledby="tab-10" hidden><div class="panel-head"><span class="ph-n">10</span><div><h2>10부 · 리스크 관리</h2><p class="ph-d">리스크 등록부와 금지선</p></div></div><div class="panel-body"><p class="lead">이 사업에서 대표를 무너뜨리는 것은 사업 실패가 아니라 <b>형사 리스크</b>입니다. 사업이 잘 안 되면 손해로 끝나지만, 선을 넘으면 회복이 불가능합니다.</p>
+
+<h3>1. 리스크 등록부</h3>
+
+<table class="data risk">
+  <thead><tr><th style="width:6%">등급</th><th style="width:24%">리스크</th><th style="width:16%">발생 가능성</th><th style="width:16%">영향</th><th>대응</th></tr></thead>
+  <tbody>
+    <tr class="row-bad"><td class="grade c">치명</td><td><b>대토보상권 불법전매 연루</b></td><td>중</td><td>형사처벌·사업 종료</td><td>전매형 구조 전면 배제. 모든 제안을 서면 검토 후 거절 기록</td></tr>
+    <tr class="row-bad"><td class="grade c">치명</td><td><b>확정수익 보장 약정</b></td><td>중</td><td>유사수신·사기</td><td>계약서·홍보물에 보장 배제 조항 명시. 구두 약속 금지 사내 규정화</td></tr>
+    <tr class="row-bad"><td class="grade c">치명</td><td><b>세제 일몰 미연장</b></td><td>중~높</td><td>사업 성립 불가</td><td>상시 모니터링. 시나리오 C 대응책 사전 수립</td></tr>
+    <tr class="row-warn"><td class="grade b">높음</td><td>대토 신청률 미달 (10% 미만)</td><td>중</td><td>사업 규모 축소</td><td>손익분기 신청률 사전 산정. 보수적 계획</td></tr>
+    <tr class="row-warn"><td class="grade b">높음</td><td>보상 일정 추가 지연</td><td>높</td><td>운전자금 소진</td><td>지연안 병행 수립. 고정비 단계적 증원</td></tr>
+    <tr class="row-warn"><td class="grade b">높음</td><td>경쟁 PM사의 배타적 선점</td><td>중</td><td>진입 실패</td><td>조합 지원형 접근으로 조기 관계 형성</td></tr>
+    <tr class="row-warn"><td class="grade b">높음</td><td>주주(토지주) 간 의견대립</td><td>높</td><td>사업 교착</td><td>주주 간 협약서에 정족수·교착해소 조항 사전 규정</td></tr>
+    <tr class="row-warn"><td class="grade b">높음</td><td>운전자금 소진</td><td>중~높</td><td>무리한 영업 → 형사</td><td>컨소시엄 참여로 부담 분산. 타 지구 병행</td></tr>
+    <tr><td class="grade a">중간</td><td>등록요건 미유지 (전문인력 이탈)</td><td>중</td><td>등록 취소</td><td>인력 이중화. 실태조사 대비 상시 관리</td></tr>
+    <tr><td class="grade a">중간</td><td>거짓·과장 광고 제재</td><td>중</td><td>행정처분·신뢰 손상</td><td>대외자료 사전 법률 검토 절차</td></tr>
+    <tr><td class="grade a">중간</td><td>개인정보 취급 위반</td><td>중</td><td>과태료·형사</td><td>수집 동의 절차, 보관기간·파기 규정</td></tr>
+    <tr><td class="grade a">중간</td><td>무자격 세무·법률 자문</td><td>중</td><td>처벌·손해배상</td><td>세무법인·법무법인 제휴 필수. 경계 준수</td></tr>
+    <tr><td class="grade a">중간</td><td>군공항 소음·발전소로 사업성 저하</td><td>중</td><td>수익 축소</td><td>용지 위치 협상 전략. 상업·업무 배치 검토</td></tr>
+    <tr><td class="grade a">중간</td><td>PF 조달 실패</td><td>중</td><td>사업 중단</td><td>시공사 책임준공 확약 사전 확보</td></tr>
+  </tbody>
+</table>
+
+<h3>2. 절대 넘지 말아야 할 선 — 사내 금지 규정</h3>
+
+<div class="callout danger">
+  <h4>다음 행위는 어떤 사업적 이유로도 하지 않습니다</h4>
+  <ol class="tight">
+    <li>대토보상권을 <b>매수</b>하거나 매수를 <b>알선</b>하는 행위</li>
+    <li>대토보상권을 담보로 <b>보상금을 선지급</b>하거나 대출을 주선하는 행위</li>
+    <li>현물출자 형식을 취하되 이면으로 <b>주식 매입을 약정</b>하는 행위</li>
+    <li>토지주에게 <b>확정수익·원금·최소배당을 보장</b>하는 구두 또는 서면 약속</li>
+    <li>지구계획 미확정 사항(용지 위치·규모·가격)을 <b>확정 사실로 설명</b>하는 행위</li>
+    <li>세제 일몰 사실을 <b>은폐하거나 잘못 안내</b>하는 행위</li>
+    <li>토지주 명부·개인정보를 <b>동의 없이 수집·활용</b>하는 행위</li>
+    <li>백지 위임장 또는 과도한 위약금 조항이 담긴 <b>동의서 징구</b></li>
+  </ol>
+</div>
+
+<h3>3. 법적 위험별 상세</h3>
+
+<table class="data">
+  <thead><tr><th style="width:24%">위험</th><th style="width:26%">근거 법률</th><th>제재</th></tr></thead>
+  <tbody>
+    <tr><td>대토보상권 불법전매</td><td>토지보상법 §63, §93의2</td><td><b>3년 이하 징역 또는 1억 원 이하 벌금</b> + 현금보상 전환 + 과세특례 배제</td></tr>
+    <tr><td>리츠 주식 전매제한 위반</td><td>부동산투자회사법</td><td>제재 및 계약 효력 문제</td></tr>
+    <tr><td>확정수익 보장·자금 모집</td><td>유사수신행위규제법, 자본시장법</td><td>형사처벌</td></tr>
+    <tr><td>거짓·과장 광고</td><td>부동산개발업법</td><td>행정처분, 등록 취소 가능</td></tr>
+    <tr><td>무자격 세무대리</td><td>세무사법</td><td>형사처벌</td></tr>
+    <tr><td>무자격 법률사무</td><td>변호사법</td><td>형사처벌</td></tr>
+    <tr><td>개인정보 무단 수집·이용</td><td>개인정보보호법</td><td>과태료·형사</td></tr>
+    <tr><td>등록요건 미유지</td><td>부동산개발업법</td><td>등록 취소</td></tr>
+  </tbody>
+</table>
+
+<h3>4. 토지주 분쟁 예방 체계</h3>
+
+<div class="two-col">
+  <div class="col-do">
+    <h4>사전 예방</h4>
+    <ul>
+      <li>모든 설명자료에 <b>출처·기준일·불확실성</b> 명시</li>
+      <li>대토·현금·채권 <b>중립 비교표</b> 상시 제공</li>
+      <li>자기부담 항목을 설명 <b>첫 장</b>에 배치</li>
+      <li>설명회 <b>녹화·자료 보관</b> (분쟁 시 증거)</li>
+      <li>질의응답 내용을 <b>서면 회신</b>으로 남김</li>
+      <li>PM <b>해임 조항</b>을 계약서에 자발적으로 포함</li>
+    </ul>
+  </div>
+  <div class="col-dont">
+    <h4>사후 대응</h4>
+    <ul>
+      <li>이의 제기 시 <b>즉시 서면 응답</b>, 방치 금지</li>
+      <li>자금집행 내역 <b>정기 공개</b>로 불신 차단</li>
+      <li>주요 의사결정은 <b>주주총회·조합총회 의결</b>을 거침</li>
+      <li>분쟁 조짐 시 <b>변호사 조기 개입</b></li>
+      <li>언론 대응은 <b>대표 단일 창구</b>로 일원화</li>
+    </ul>
+  </div>
+</div>
+
+<h3>5. 규제 방향 전망</h3>
+
+<p>국토교통부의 대토보상 정책은 일관되게 <b>"전매 차단 + 원주민 개발이익 공유"</b> 방향으로 움직여 왔습니다.</p>
+
+<div class="trend">
+  <div class="trend-item"><b>2019~2020</b> 불법전매·편법대출 문제 부각 → 업무용지 공급 제한, 금전채권신탁 대출 금지, 영업인가 전 현물출자 제한 유권해석</div>
+  <div class="trend-item"><b>2021</b> 특례등록 도입(완화)과 3년 전매제한(강화)을 동시에 시행</div>
+  <div class="trend-item"><b>2026</b> 리츠 5년 이상 주식 보유 시 사후관리 배제(완화)</div>
+  <div class="trend-item hl"><b>전망</b> 규제 완화는 <b>참여형·장기보유형 구조</b>에 한정해 이루어지고, 전매형에 대한 압박은 계속될 가능성이 큽니다 <span class="tag est">추정</span></div>
+</div>
+
+<div class="callout action">
+  <h4>전략적 함의</h4>
+  <p>규제 흐름은 신규 진입자에게 <b>유리합니다.</b> 전매형으로 수익을 내던 기존 업체들의 모델이 계속 좁아지는 반면, 처음부터 <b>참여형·조합 지원형</b>으로 설계한 PM사는 규제 강화가 곧 경쟁 배제 효과로 작용합니다. 단기적으로 손해 보는 것처럼 보이는 정직한 구조가 중기적으로는 가장 강한 해자가 됩니다.</p>
+</div>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="9">← 자금과 수익</button><button class="pn-btn" data-goto="11">실행 로드맵 →</button></div></section><section class="panel s-p11" id="panel-11" role="tabpanel" aria-labelledby="tab-11" hidden><div class="panel-head"><span class="ph-n">11</span><div><h2>11부 · 실행 로드맵</h2><p class="ph-d">90일 계획과 의사결정 게이트</p></div></div><div class="panel-body"><p class="lead">지금은 2026년 8월입니다. 보상계획 공고까지 약 16개월, 협의·계약까지 약 28개월이 남았습니다. 이 시간은 준비하기에 <b>충분하되 여유롭지는 않습니다.</b></p>
+
+<h3>1. 첫 90일 — 지금 당장 할 일</h3>
+
+<table class="data">
+  <thead><tr><th style="width:14%">기간</th><th style="width:30%">과업</th><th style="width:32%">산출물</th><th>비고</th></tr></thead>
+  <tbody>
+    <tr><td><b>1~30일</b></td><td>부동산개발 전문인력 <b>사전교육 접수</b></td><td>수강 확정</td><td>정원 30명 내외. <b>최우선</b></td></tr>
+    <tr><td></td><td>세제 일몰 모니터링 체계 구축</td><td>기재부·국회 일정표, 법령 알림 설정</td><td>—</td></tr>
+    <tr><td></td><td>진안지구 공개자료 아카이브</td><td>고시문, 환경영향평가서, 언론 스크랩</td><td>—</td></tr>
+    <tr><td></td><td>대책위 공개 활동 참관</td><td>조직도·핵심 인물 파악</td><td>영업 아닌 관찰</td></tr>
+    <tr><td><b>31~60일</b></td><td>법인 설립 (자본금 3억)</td><td>등기부등본, 사업자등록증</td><td>—</td></tr>
+    <tr><td></td><td>사무실 확보 (전용 33㎡ 이상)</td><td>임대차계약서, 용도 확인</td><td>병점·동탄 인근 권장</td></tr>
+    <tr><td></td><td>국토부 리츠정보시스템 <b>대토리츠 전수 조사</b></td><td>등록 리츠 목록·AMC·규모 정리표</td><td>설명회 자료의 핵심 근거</td></tr>
+    <tr><td></td><td>AMC·법무·세무·감정 후보 접촉</td><td>파트너 후보 리스트</td><td>—</td></tr>
+    <tr><td><b>61~90일</b></td><td>부동산개발업 등록 신청</td><td>등록증</td><td>—</td></tr>
+    <tr><td></td><td><b>세제 일몰 브리핑 자료</b> 제작</td><td>1장짜리 정확한 안내문</td><td><b>첫 접촉의 명분</b></td></tr>
+    <tr><td></td><td>감정평가법인 토지소유자 추천 요건 안내서 제작</td><td>동의 요건·절차 설명 자료</td><td>2028년 캠페인 예고</td></tr>
+    <tr><td></td><td>대책위 실무진 첫 면담</td><td>관계 형성</td><td>계약 요구 금지</td></tr>
+  </tbody>
+</table>
+
+<h3>2. 연도별 마일스톤</h3>
+
+<div class="roadmap">
+  <div class="rm-year">
+    <div class="rm-head">2026 하반기</div>
+    <ul>
+      <li>법인 설립 및 부동산개발업 등록 완료</li>
+      <li>전문인력 2인 확보·교육 이수</li>
+      <li>대책위 관계 형성 착수</li>
+      <li>파트너 컨소시엄 초안 구성</li>
+    </ul>
+    <div class="rm-kpi">KPI: 등록증 취득 · 대책위 실무진 면담 2회 이상</div>
+  </div>
+  <div class="rm-year">
+    <div class="rm-head">2027</div>
+    <ul>
+      <li>조서 작성(6월) 대응 지원 캠페인</li>
+      <li>토지주 명부 구축 및 설명회 개시</li>
+      <li>보상계획 공고(12월) 즉시 대응 자료 준비</li>
+      <li>대토조합 설립 지원 제안</li>
+      <li>사업성 개략 검토(지구계획 승인 반영)</li>
+    </ul>
+    <div class="rm-kpi">KPI: 설명회 4회 이상 · 관심 토지주 명부 확보 · 조합 설립 논의 개시</div>
+  </div>
+  <div class="rm-year">
+    <div class="rm-head">2028</div>
+    <ul>
+      <li>감정평가법인 토지소유자 추천 캠페인 지원(2월)</li>
+      <li>대토 신청 실무 지원(감정평가 4월 이후)</li>
+      <li>PM 선정 절차 참여</li>
+      <li>리츠 구조 확정·AMC 계약</li>
+      <li>협의·계약(12월) → 특례등록 준비</li>
+    </ul>
+    <div class="rm-kpi">KPI: PM 계약 체결 · 대토 신청 확보 면적</div>
+  </div>
+  <div class="rm-year">
+    <div class="rm-head">2029~2030</div>
+    <ul>
+      <li>대토리츠 특례등록 및 현물출자</li>
+      <li>영업인가 취득</li>
+      <li>택지 수의계약 공급</li>
+      <li>PF 조달·시공사 확정</li>
+    </ul>
+    <div class="rm-kpi">KPI: 영업인가 · PM 기성 수취 개시</div>
+  </div>
+  <div class="rm-year">
+    <div class="rm-head">2030~2033</div>
+    <ul>
+      <li>인허가·착공·분양</li>
+      <li>준공·정산·배당</li>
+      <li>주식 전매제한 3년 경과 후 출구</li>
+    </ul>
+    <div class="rm-kpi">KPI: 준공 · 배당 실현 · 성공보수 수취</div>
+  </div>
+</div>
+
+<h3>3. 의사결정 게이트</h3>
+
+<p>각 게이트에서 조건이 충족되지 않으면 <b>다음 단계에 자금을 투입하지 않는다</b>는 원칙을 세우십시오. 이것이 J커브 바닥에서 파산하지 않는 유일한 방법입니다.</p>
+
+<table class="data">
+  <thead><tr><th style="width:14%">게이트</th><th style="width:20%">시점</th><th style="width:34%">통과 조건</th><th>미충족 시</th></tr></thead>
+  <tbody>
+    <tr><td><b>G1</b></td><td>2026년 말</td><td>등록 완료 + 대책위 접점 확보</td><td>사업 재검토</td></tr>
+    <tr><td><b>G2</b></td><td>2027년 세제개편 발표 직후</td><td><b>제77조의2 일몰 연장 확인</b></td><td>시나리오 C 발동 — 사업 축소 또는 철수</td></tr>
+    <tr><td><b>G3</b></td><td>2027년 말</td><td>보상계획 공고 정상 진행 + 대토 관심 토지주 확보</td><td>고정비 동결</td></tr>
+    <tr><td><b>G4</b></td><td>2028년 상반기</td><td>PM 계약 또는 컨소시엄 지위 확보</td><td>철수 검토</td></tr>
+    <tr><td><b>G5</b></td><td>2028년 말</td><td>대토 신청 면적이 손익분기 초과</td><td>사업 규모 조정</td></tr>
+  </tbody>
+</table>
+
+<h3>4. 대안 경로</h3>
+
+<p>진안지구 진입이 막히거나 지연될 경우를 대비한 병행 옵션입니다.</p>
+
+<table class="data">
+  <thead><tr><th style="width:28%">대안</th><th>내용</th></tr></thead>
+  <tbody>
+    <tr><td>인접 지구 병행</td><td>화성어천, 봉담 등 경기남부 공공주택지구. 보상 단계가 다른 지구를 조합하면 현금흐름이 평탄해짐</td></tr>
+    <tr><td>상가조합 PM 특화</td><td>생활대책용지 기반 상가조합. 대토리츠보다 회수 기간이 짧고 규모가 작아 <b>첫 레퍼런스 확보에 유리</b></td></tr>
+    <tr><td>보상 자문 서비스</td><td>조서 이의신청·감정평가 대응 등 단기 유료 자문으로 초기 현금흐름 확보</td></tr>
+    <tr><td>컨소시엄 지역 파트너</td><td>실적사와 제휴해 지역 담당. 수익은 작으나 리스크가 낮고 레퍼런스를 얻음</td></tr>
+  </tbody>
+</table>
+
+<h3>5. 오늘 할 수 있는 세 가지</h3>
+
+<div class="today">
+  <div class="td-item"><span class="td-n">1</span><div><b>사전교육 회차 확인</b><br>한국부동산원 053-663-8723 또는 한국부동산개발협회 02-512-4750에 2026년 하반기 회차 접수 가능 여부 문의</div></div>
+  <div class="td-item"><span class="td-n">2</span><div><b>리츠정보시스템 조회</b><br>reits.molit.go.kr에서 대토리츠 등록 현황과 인가받은 AMC 목록을 내려받아 정리</div></div>
+  <div class="td-item"><span class="td-n">3</span><div><b>세제 알림 설정</b><br>국가법령정보센터에서 조세특례제한법 제77조의2 개정 알림 등록</div></div>
+</div>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="10">← 리스크</button><button class="pn-btn" data-goto="12">부록 →</button></div></section><section class="panel s-p12" id="panel-12" role="tabpanel" aria-labelledby="tab-12" hidden><div class="panel-head"><span class="ph-n">12</span><div><h2>12부 · 부록과 체크리스트</h2><p class="ph-d">연락처·법령·용어집</p></div></div><div class="panel-body"><h3>1. 관련 기관 연락처</h3>
+
+<table class="data">
+  <thead><tr><th style="width:30%">기관</th><th style="width:28%">용도</th><th>연락처 / 사이트</th></tr></thead>
+  <tbody>
+    <tr><td>국토교통부 리츠정보시스템</td><td>대토리츠 특례등록·영업인가, AMC 인가 절차, 등록 리츠 조회</td><td>reits.molit.go.kr</td></tr>
+    <tr><td>한국리츠협회</td><td>AMC 설립 현황, 업계 통계</td><td>kareit.or.kr</td></tr>
+    <tr><td>한국부동산개발협회</td><td>부동산개발업 등록, 전문인력 교육</td><td>02-512-4750</td></tr>
+    <tr><td>한국부동산원</td><td>전문인력 사전교육 (93만 5천 원, 9일)</td><td>053-663-8723</td></tr>
+    <tr><td>건설기술교육원</td><td>전문인력 사전교육</td><td>032-460-0242</td></tr>
+    <tr><td>한국부동산개발전문가협회</td><td>전문인력 사전교육</td><td>02-6951-0369</td></tr>
+    <tr><td>LH 경기남부지역본부</td><td>진안지구 보상 실무</td><td>lh.or.kr 공고 확인</td></tr>
+    <tr><td>화성시청</td><td>인허가, 민·관·공 협의체</td><td>hscity.go.kr</td></tr>
+    <tr><td>국가법령정보센터</td><td>법령 원문·개정 확인</td><td>law.go.kr</td></tr>
+    <tr><td>환경영향평가정보지원시스템</td><td>진안지구 환경영향평가서</td><td>eiass.go.kr</td></tr>
+  </tbody>
+</table>
+
+<h3>2. 진안지구 관련 인물·조직</h3>
+
+<table class="data">
+  <thead><tr><th style="width:28%">구분</th><th style="width:26%">인물·조직</th><th>메모</th></tr></thead>
+  <tbody>
+    <tr><td>통합대책위원회</td><td>위원장 이병구</td><td>원주민 50% 이상 가입, 정식 등록 비영리단체</td></tr>
+    <tr><td>연합대책위원회</td><td>공동위원장 임장호</td><td>언론 대응 활발</td></tr>
+    <tr><td>토지주측 법률자문</td><td>법무법인 도안 구해동 변호사</td><td>통합대책위 설명회 진행</td></tr>
+    <tr><td>토지주측 세무자문</td><td>세무법인 리치 이성호 세무사</td><td>—</td></tr>
+    <tr><td>시행자측 권리구제</td><td>법무법인 율촌</td><td>LH 설명회 세션</td></tr>
+    <tr><td>시행자측 감정평가</td><td>하나감정평가법인</td><td>LH 설명회 세션</td></tr>
+    <tr><td>경쟁 PM사</td><td>㈜미래피엠 (대표 정헌수)</td><td>화성시 노작로3길 3 반석빌딩 3층 / 031-613-5115</td></tr>
+    <tr><td>대토 자문 법무법인</td><td>법무법인 박앤정</td><td>용역대금 지급방식 자문 모델</td></tr>
+  </tbody>
+</table>
+
+<h3>3. 핵심 법령 조문</h3>
+
+<table class="data compact">
+  <thead><tr><th style="width:40%">법률</th><th>조문</th></tr></thead>
+  <tbody>
+    <tr><td>공익사업을 위한 토지 등의 취득 및 보상에 관한 법률</td><td>제15조(보상계획 공고·열람)<br>제63조(현금보상 원칙·대토보상·전매금지)<br>제68조(보상액의 산정)<br>제93조의2(벌칙)</td></tr>
+    <tr><td>부동산투자회사법</td><td>제22조의3(자산관리회사 설립인가)<br>제26조의2(현물출자 특례)<br>제26조의3(대토보상권 현물출자)</td></tr>
+    <tr><td>조세특례제한법</td><td>제77조(공익사업용 토지 양도세 감면)<br>제77조의2(대토보상 과세특례)<br>제77조의3(개발제한구역 — <b>혼동 주의</b>)<br>제133조(양도세 감면 종합한도)</td></tr>
+    <tr><td>조세특례제한법 시행령</td><td>제73조(대토보상 신청·사후관리)</td></tr>
+    <tr><td>부동산개발업의 관리 및 육성에 관한 법률</td><td>제4조(등록)<br>제5조(전문인력 교육)<br>시행령 제9조 및 별표1(등록요건)</td></tr>
+    <tr><td>건축법</td><td>제57조(대지의 분할 제한)</td></tr>
+    <tr><td>공공주택 특별법</td><td>지구지정·지구계획 승인</td></tr>
+  </tbody>
+</table>
+
+<h3>4. 확인 불가 항목과 확보 경로</h3>
+
+<table class="data">
+  <thead><tr><th style="width:34%">미확인 항목</th><th style="width:34%">확보 경로</th><th>우선순위</th></tr></thead>
+  <tbody>
+    <tr><td>등록 대토리츠 전체 목록·AMC·수익률</td><td>리츠정보시스템 직접 조회</td><td class="pri hi">최상</td></tr>
+    <tr><td>진안지구 토지주 수·필지 통계</td><td>토지대장·등기 열람, 정보공개청구</td><td class="pri hi">최상</td></tr>
+    <tr><td>조특법 §77의2 일몰 연장 여부</td><td>2026년 세제개편안, 국회 기재위</td><td class="pri hi">최상</td></tr>
+    <tr><td>진안 토지이용계획·용지별 물량</td><td>지구계획 승인 고시</td><td class="pri mid">높음</td></tr>
+    <tr><td>진안 예상 조성원가·총 보상비</td><td>보상계획 공고, LH 자료</td><td class="pri mid">높음</td></tr>
+    <tr><td>PM 수수료 시장 요율</td><td>업계 면담, 기존 계약 사례</td><td class="pri mid">높음</td></tr>
+    <tr><td>동탄2 제일호 리츠 최종 성과</td><td>학술논문 원문, 리츠정보시스템 공시</td><td class="pri mid">높음</td></tr>
+    <tr><td>대토 신청률 최신 통계(2024~2026)</td><td>LH 국정감사 자료, 정보공개청구</td><td class="pri low">중간</td></tr>
+    <tr><td>불법전매 형사 판결 상세</td><td>판례 검색(케이스노트·로앤비)</td><td class="pri low">중간</td></tr>
+    <tr><td>PM사 운전자금 실제 사례</td><td>업계 면담</td><td class="pri low">중간</td></tr>
+  </tbody>
+</table>
+
+<h3>5. 용어집</h3>
+
+<dl class="glossary">
+  <dt>대토보상</dt><dd>공익사업으로 수용되는 토지의 보상을 현금이 아니라 그 사업으로 조성된 토지로 받는 것. 2007년 10월 토지보상법 제63조 개정으로 도입.</dd>
+  <dt>대토보상권</dt><dd>토지로 보상받기로 결정된 권리. 원칙적으로 전매 금지이며, 상속과 개발전문 부동산투자회사 현물출자만 예외.</dd>
+  <dt>대토리츠(대토개발리츠)</dt><dd>토지소유자로부터 대토보상권을 현물출자받아 개발사업을 시행하고 수익을 배당하는 부동산투자회사.</dd>
+  <dt>현물출자</dt><dd>금전이 아닌 재산(여기서는 대토보상권)을 출자하고 주식을 받는 것. 출자가액은 토지보상법 제68조 산정액.</dd>
+  <dt>특례등록</dt><dd>2021년 도입. 대토리츠가 영업인가 전에 국토부에 등록해 대토보상권을 조기 현물출자할 수 있게 한 절차.</dd>
+  <dt>영업인가</dt><dd>국토교통부장관이 리츠의 본격적인 자산 투자·운용을 허가하는 처분.</dd>
+  <dt>AMC(자산관리회사)</dt><dd>위탁관리·기업구조조정 부동산투자회사의 위탁을 받아 자산의 투자·운용을 수행하는 회사. 국토부 설립인가 필요(자기자본 70억, 전문인력 5인).</dd>
+  <dt>PM(Project Management)사</dt><dd>사업 주체를 대신해 기획·인허가·금융·시공·분양 등 개발 실무를 총괄 대행하는 회사.</dd>
+  <dt>130% 규정</dt><dd>사업시행자가 대토리츠에 대토보상권 가액의 130% 면적·금액 범위까지 택지를 수의계약으로 공급할 수 있도록 한 규정.</dd>
+  <dt>과세이연</dt><dd>양도소득세를 대토 취득 시점이 아니라 그 대토를 처분하는 시점으로 미루는 것. 감면과 택일.</dd>
+  <dt>부재부동산 소유자</dt><dd>사업인정고시일 이전부터 해당 지역에 거주하지 않거나 30km 밖에 거주하는 소유자. 대토 후순위, 일정액 초과 보상금은 채권 의무 지급.</dd>
+  <dt>수용재결</dt><dd>협의가 결렬되었을 때 토지수용위원회가 보상금과 수용 시기를 결정하는 처분. 이 단계로 넘어가면 대토 선택권이 소멸.</dd>
+  <dt>이주자택지 / 생활대책용지</dt><dd>거주 가옥 소유자 또는 영업손실 보상 대상자에게 공급되는 별도의 용지. 대토보상과 구분되는 권리.</dd>
+  <dt>선신탁 / 후신탁</dt><dd>대토업체가 신탁 구조로 대토보상권을 사실상 매입하는 방식. 전매 논란과 세제 불이익이 있어 권장되지 않음.</dd>
+</dl>
+
+<h3>6. 최종 점검 체크리스트</h3>
+
+<div class="checklist final">
+  <label><input type="checkbox"> 전문인력 사전교육 회차를 확인하고 접수했다</label>
+  <label><input type="checkbox"> 조특법 제77조의2 일몰 연장 여부를 추적하는 체계를 만들었다</label>
+  <label><input type="checkbox"> 제77조의2와 제77조의3을 혼동하지 않는다</label>
+  <label><input type="checkbox"> 대토 신청률을 10~15%로 놓고 손익분기를 계산했다</label>
+  <label><input type="checkbox"> 무수익 3년치 운전자금 조달 계획이 있다</label>
+  <label><input type="checkbox"> 전매형 구조(선신탁·후신탁·주식매도형)를 배제하기로 결정했다</label>
+  <label><input type="checkbox"> 확정수익 보장을 금지하는 사내 규정을 만들었다</label>
+  <label><input type="checkbox"> AMC는 제휴로 가기로 결정했다</label>
+  <label><input type="checkbox"> 법무법인·세무법인 제휴처를 확보했다</label>
+  <label><input type="checkbox"> PM 계약서에 해임 조항과 보장 배제 조항을 넣기로 했다</label>
+  <label><input type="checkbox"> 대책위 접촉 시 계약을 먼저 요구하지 않기로 했다</label>
+  <label><input type="checkbox"> 개인정보 수집·이용 동의 절차를 갖췄다</label>
+  <label><input type="checkbox"> 진안지구 지연 시나리오(2030년)를 사업계획에 병기했다</label>
+  <label><input type="checkbox"> 대안 경로(인접 지구·상가조합 PM)를 검토했다</label>
+</div>
+
+<h3>7. 보고서 한계와 갱신</h3>
+
+<div class="callout info">
+  <p>이 보고서는 <b>2026년 8월 1일</b>까지의 공개 자료를 기준으로 작성되었습니다. 다음 항목은 변동 가능성이 높으므로 <b>분기별 갱신</b>을 권합니다.</p>
+  <ul class="tight">
+    <li>조세특례제한법 일몰 및 감면율 — <b>최우선</b></li>
+    <li>진안지구 지구계획 승인 및 보상 일정</li>
+    <li>부동산투자회사법·부동산개발업법 개정</li>
+    <li>대책위 조직 변동 및 경쟁사 진입 상황</li>
+    <li>전문인력 사전교육 비용·회차</li>
+  </ul>
+  <p><b>법률·세무 고지</b> — 이 문서는 공개 자료를 정리한 참고 자료이며 법률의견서나 세무자문이 아닙니다. 실제 의사결정, 계약 체결, 대외 설명 전에 반드시 변호사·세무사·감정평가사의 개별 검토를 받으십시오. 특히 대토보상권의 이전 구조와 관련한 판단은 형사책임과 직결되므로 서면 법률의견을 확보하시기 바랍니다.</p>
+</div>
+</div><div class="panel-nav"><button class="pn-btn" data-goto="11">← 실행 로드맵</button><button class="pn-btn ghost">.</button></div></section>
+  <footer class="foot">
+    <b>화성진안 공공주택지구 대토보상 리츠 PM사 사업 준비 종합 보고서</b><br>
+    기준시점 2026년 8월 1일 · 공개 자료 기반 참고 문서입니다. 법률의견서나 세무자문이 아니며,
+    실제 의사결정 전 변호사·세무사·감정평가사의 개별 검토를 받으시기 바랍니다.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  function show(n,focus){
+    tabs.forEach(function(t){
+      var on=(+t.dataset.n===n);
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+      if(on&&focus)t.focus();
+    });
+    panels.forEach(function(p){p.hidden=(p.id!=='panel-'+n)});
+    window.scrollTo(0,0);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){show(+t.dataset.n,false)});
+    t.addEventListener('keydown',function(e){
+      var i=tabs.indexOf(t),n=null;
+      if(e.key==='ArrowRight')n=(i+1)%tabs.length;
+      if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;
+      if(e.key==='Home')n=0;
+      if(e.key==='End')n=tabs.length-1;
+      if(n!==null){e.preventDefault();show(+tabs[n].dataset.n,true)}
+    });
+  });
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(!t||!t.closest)return;
+    var g=t.closest('[data-goto]');
+    if(g){show(+g.dataset.goto,false)}
+  });
+
+  // 글자 크기
+  var sizes=[18,20,23,26],idx=1;
+  var root=document.documentElement;
+  function apply(){
+    root.style.fontSize=sizes[idx]+'px';
+    document.querySelectorAll('[data-size]').forEach(function(b){
+      b.setAttribute('aria-pressed', (+b.dataset.size===idx)?'true':'false');
+    });
+  }
+  document.querySelectorAll('[data-size]').forEach(function(b){
+    b.addEventListener('click',function(){idx=+b.dataset.size;apply()});
+  });
+  apply();
+
+  var pr=document.getElementById('printBtn');
+  if(pr)pr.addEventListener('click',function(){window.print()});
+})();
+</script>
+</body>
+</html>
